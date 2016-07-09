@@ -19,17 +19,18 @@
                     <connections>
                         <segue destination="TSw-ut-nAT" kind="relationship" relationship="viewControllers" id="p4p-mZ-cYI"/>
                         <segue destination="Elh-3e-ndW" kind="relationship" relationship="viewControllers" id="SKB-Z7-oMT"/>
+                        <segue destination="gRc-GK-2Cq" kind="relationship" relationship="viewControllers" id="UqV-CK-42E"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phY-50-nOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299" y="1267"/>
+            <point key="canvasLocation" x="240" y="1903"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Restaurant-->
         <scene sceneID="wFj-LH-rpQ">
             <objects>
                 <navigationController navigationBarHidden="YES" id="TSw-ut-nAT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="tV2-zS-TAp"/>
+                    <tabBarItem key="tabBarItem" title="Restaurant" image="restaurant" id="tV2-zS-TAp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tGb-62-Lrb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -42,11 +43,11 @@
             </objects>
             <point key="canvasLocation" x="974" y="982"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Events-->
         <scene sceneID="uNc-dS-0sI">
             <objects>
                 <navigationController navigationBarHidden="YES" id="Elh-3e-ndW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="znh-p6-QVe"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="events" id="znh-p6-QVe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DCX-EC-q6y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,14 +60,18 @@
             </objects>
             <point key="canvasLocation" x="974" y="1651"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Videos-->
         <scene sceneID="eJs-Uw-Xcw">
             <objects>
-                <navigationController id="gRc-GK-2Cq" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="gRc-GK-2Cq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Videos" image="music_video" id="VyU-AL-KxW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rfs-0v-sxw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="lvd-zu-Vad" kind="relationship" relationship="rootViewController" id="Cnl-4P-ZIC"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjU-ft-g19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -375,7 +380,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVn-fK-Bgz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVn-fK-Bgz">
                                 <rect key="frame" x="0.0" y="80" width="600" height="451"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -644,7 +649,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aqe-FZ-6UZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aqe-FZ-6UZ">
                                 <rect key="frame" x="0.0" y="80" width="600" height="451"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -785,8 +790,8 @@
     </scenes>
     <resources>
         <image name="Christmas" width="150" height="147"/>
-        <image name="events" width="150" height="147"/>
-        <image name="music_video" width="150" height="147"/>
-        <image name="restaurant" width="150" height="147"/>
+        <image name="events" width="25" height="25"/>
+        <image name="music_video" width="25" height="25"/>
+        <image name="restaurant" width="25" height="25"/>
     </resources>
 </document>

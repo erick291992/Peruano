@@ -77,14 +77,14 @@ class DataService {
         })
     }
     
-//    func getVideosByCategory(category:String, type:String, completionHandlerForVideos:(fetchedVideos:[Video])->Void){
-//        var videos = [Video]()
-//        REF_VIDEOS.child(category).child(type).queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
-//            let video = Video(snapshot: snapshot)
-//            videos.append(video)
-//            completionHandlerForVideos(fetchedVideos: videos)
-//        })
-//    }
+    func getVideosByCategory(category:String, type:String, completionHandlerForVideos:(fetchedVideos:[Video])->Void){
+        var videos = [Video]()
+        REF_VIDEOS.child(category).child(type).queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
+            let video = Video(snapshot: snapshot)
+            videos.append(video)
+            completionHandlerForVideos(fetchedVideos: videos)
+        })
+    }
     
     func getCurrentDay()-> String {
         let dateFormatter = NSDateFormatter()
