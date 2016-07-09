@@ -17,6 +17,9 @@
 		CDBCB38B1D31B67700454371 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3881D31B67700454371 /* InfoVC.swift */; };
 		CDBCB38D1D31B83700454371 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB38C1D31B83700454371 /* DataService.swift */; };
 		CDBCB38F1D31B92600454371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDBCB38E1D31B92600454371 /* GoogleService-Info.plist */; };
+		CDBCB3911D31BA8100454371 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3901D31BA8100454371 /* EventVC.swift */; };
+		CDBCB3931D31BA9300454371 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3921D31BA9300454371 /* Event.swift */; };
+		CDBCB3951D31BAA000454371 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3941D31BAA000454371 /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		CDBCB3881D31B67700454371 /* InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		CDBCB38C1D31B83700454371 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		CDBCB38E1D31B92600454371 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDBCB3901D31BA8100454371 /* EventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
+		CDBCB3921D31BA9300454371 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		CDBCB3941D31BAA000454371 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +83,10 @@
 		CDBCB3721D31AA9000454371 /* Peruano */ = {
 			isa = PBXGroup;
 			children = (
+				CDBCB3971D31BCA700454371 /* View */,
+				CDBCB3961D31BC8D00454371 /* Model */,
 				CDBCB38E1D31B92600454371 /* GoogleService-Info.plist */,
 				CDBCB38C1D31B83700454371 /* DataService.swift */,
-				CDBCB3861D31B67700454371 /* Info.swift */,
-				CDBCB3871D31B67700454371 /* InfoTableViewCell.swift */,
 				CDBCB3851D31AAB300454371 /* Controller */,
 				CDBCB3731D31AA9000454371 /* AppDelegate.swift */,
 				CDBCB3771D31AA9000454371 /* Main.storyboard */,
@@ -94,9 +100,28 @@
 		CDBCB3851D31AAB300454371 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CDBCB3901D31BA8100454371 /* EventVC.swift */,
 				CDBCB3881D31B67700454371 /* InfoVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		CDBCB3961D31BC8D00454371 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDBCB3861D31B67700454371 /* Info.swift */,
+				CDBCB3921D31BA9300454371 /* Event.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CDBCB3971D31BCA700454371 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDBCB3871D31B67700454371 /* InfoTableViewCell.swift */,
+				CDBCB3941D31BAA000454371 /* EventTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E05072C2C2330BB3D50E1C3D /* Pods */ = {
@@ -232,10 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBCB3951D31BAA000454371 /* EventTableViewCell.swift in Sources */,
 				CDBCB38B1D31B67700454371 /* InfoVC.swift in Sources */,
 				CDBCB38A1D31B67700454371 /* InfoTableViewCell.swift in Sources */,
 				CDBCB3741D31AA9000454371 /* AppDelegate.swift in Sources */,
+				CDBCB3911D31BA8100454371 /* EventVC.swift in Sources */,
 				CDBCB3891D31B67700454371 /* Info.swift in Sources */,
+				CDBCB3931D31BA9300454371 /* Event.swift in Sources */,
 				CDBCB38D1D31B83700454371 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

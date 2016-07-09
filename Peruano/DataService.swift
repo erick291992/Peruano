@@ -68,14 +68,14 @@ class DataService {
         })
     }
     
-//    func getEventsByState(state:String, completionHandlerForEvents:(fetchedEvents:[Event])->Void){
-//        var events = [Event]()
-//        REF_EVENTS.child(state).child("All").queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
-//            let event = Event(snapshot: snapshot)
-//            events.append(event)
-//            completionHandlerForEvents(fetchedEvents: events)
-//        })
-//    }
+    func getEventsByState(state:String, completionHandlerForEvents:(fetchedEvents:[Event])->Void){
+        var events = [Event]()
+        REF_EVENTS.child(state).child("All").queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
+            let event = Event(snapshot: snapshot)
+            events.append(event)
+            completionHandlerForEvents(fetchedEvents: events)
+        })
+    }
     
 //    func getVideosByCategory(category:String, type:String, completionHandlerForVideos:(fetchedVideos:[Video])->Void){
 //        var videos = [Video]()
