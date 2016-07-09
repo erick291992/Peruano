@@ -412,8 +412,8 @@
                                                             <nil key="highlightedColor"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
-                                                                    <exclude reference="JdK-KY-EI0"/>
                                                                     <exclude reference="3fr-xK-OBC"/>
+                                                                    <exclude reference="JdK-KY-EI0"/>
                                                                 </mask>
                                                             </variation>
                                                             <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
@@ -431,8 +431,8 @@
                                                             <nil key="highlightedColor"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
-                                                                    <exclude reference="zUe-M2-tQo"/>
                                                                     <exclude reference="4dE-LY-ud5"/>
+                                                                    <exclude reference="zUe-M2-tQo"/>
                                                                 </mask>
                                                             </variation>
                                                             <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
@@ -458,7 +458,7 @@
                                                                 <rect key="frame" x="255" y="71" width="31" height="12"/>
                                                             </variation>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Christmas" translatesAutoresizingMaskIntoConstraints="NO" id="diW-0h-WWP">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music_video" translatesAutoresizingMaskIntoConstraints="NO" id="diW-0h-WWP">
                                                             <rect key="frame" x="496" y="8" width="80" height="114"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="FDp-7V-Lsf"/>
@@ -500,8 +500,8 @@
                                                             <exclude reference="j1h-yY-oYU"/>
                                                             <exclude reference="MIL-Ub-nKg"/>
                                                             <exclude reference="Cl4-Gf-vot"/>
-                                                            <exclude reference="Q0l-EB-clV"/>
                                                             <exclude reference="PzH-3l-RXt"/>
+                                                            <exclude reference="Q0l-EB-clV"/>
                                                             <exclude reference="JTH-Lo-qVH"/>
                                                         </mask>
                                                     </variation>
@@ -523,13 +523,13 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Zz8-eH-nUD"/>
                                                     <exclude reference="5YO-Vo-Go5"/>
-                                                    <exclude reference="TzP-IB-luA"/>
                                                     <exclude reference="9g7-G0-4Ws"/>
-                                                    <exclude reference="o8P-My-6Da"/>
-                                                    <exclude reference="lZC-9f-ZbG"/>
                                                     <exclude reference="Ezn-HU-cME"/>
+                                                    <exclude reference="TzP-IB-luA"/>
+                                                    <exclude reference="Zz8-eH-nUD"/>
+                                                    <exclude reference="lZC-9f-ZbG"/>
+                                                    <exclude reference="o8P-My-6Da"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -571,18 +571,18 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="KMW-z3-inN"/>
-                                <exclude reference="shw-r0-c1d"/>
-                                <exclude reference="XSe-fo-QK4"/>
-                                <exclude reference="XIk-Lj-Izm"/>
-                                <exclude reference="vYa-e9-vcd"/>
-                                <exclude reference="gu4-aH-VE4"/>
                                 <exclude reference="K1v-1W-4QS"/>
-                                <exclude reference="z7G-Av-oNl"/>
+                                <exclude reference="KMW-z3-inN"/>
+                                <exclude reference="XIk-Lj-Izm"/>
+                                <exclude reference="XSe-fo-QK4"/>
+                                <exclude reference="gu4-aH-VE4"/>
+                                <exclude reference="shw-r0-c1d"/>
+                                <exclude reference="vYa-e9-vcd"/>
                                 <exclude reference="RHD-kN-ubx"/>
                                 <exclude reference="lwY-fL-vGv"/>
-                                <exclude reference="Ipb-NH-85i"/>
+                                <exclude reference="z7G-Av-oNl"/>
                                 <exclude reference="1LI-xT-crv"/>
+                                <exclude reference="Ipb-NH-85i"/>
                                 <exclude reference="OQY-hd-ZJA"/>
                             </mask>
                         </variation>
@@ -672,7 +672,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27o-8X-YQT">
                                                             <rect key="frame" x="8" y="32" width="568" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -715,13 +715,13 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="lDb-Yy-XwQ"/>
-                                                    <exclude reference="xxM-41-DCj"/>
-                                                    <exclude reference="ix2-vf-NEw"/>
                                                     <exclude reference="7zP-dT-fmm"/>
                                                     <exclude reference="BJP-bf-MnP"/>
-                                                    <exclude reference="fTO-aB-5IQ"/>
                                                     <exclude reference="KXl-Gs-rXM"/>
+                                                    <exclude reference="fTO-aB-5IQ"/>
+                                                    <exclude reference="ix2-vf-NEw"/>
+                                                    <exclude reference="lDb-Yy-XwQ"/>
+                                                    <exclude reference="xxM-41-DCj"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -761,19 +761,19 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="lTU-zs-fEj"/>
-                                <exclude reference="rgD-5l-ypS"/>
-                                <exclude reference="bgH-Rh-T2s"/>
+                                <exclude reference="AJS-Hx-p9J"/>
+                                <exclude reference="LeO-rl-Qdw"/>
                                 <exclude reference="Ssl-b0-xVe"/>
                                 <exclude reference="U6J-W5-OCe"/>
-                                <exclude reference="LeO-rl-Qdw"/>
-                                <exclude reference="AJS-Hx-p9J"/>
+                                <exclude reference="bgH-Rh-T2s"/>
+                                <exclude reference="lTU-zs-fEj"/>
+                                <exclude reference="rgD-5l-ypS"/>
                                 <exclude reference="C6D-S2-xZW"/>
-                                <exclude reference="jwk-db-c6S"/>
                                 <exclude reference="ckM-m5-S9E"/>
+                                <exclude reference="jwk-db-c6S"/>
+                                <exclude reference="9IM-Nl-lDw"/>
                                 <exclude reference="G3e-Wo-IVH"/>
                                 <exclude reference="UWO-2l-wpN"/>
-                                <exclude reference="9IM-Nl-lDw"/>
                             </mask>
                         </variation>
                     </view>
@@ -789,7 +789,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Christmas" width="150" height="147"/>
         <image name="events" width="25" height="25"/>
         <image name="music_video" width="25" height="25"/>
         <image name="restaurant" width="25" height="25"/>
