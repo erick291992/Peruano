@@ -1,0 +1,6 @@
+framework module Pods_Peruano {
+  umbrella header "Pods-Peruano-umbrella.h"
+
+  export *
+  module * { export * }
+}
