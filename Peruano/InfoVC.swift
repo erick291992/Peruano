@@ -12,7 +12,7 @@ class InfoVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var infoToDisplay = [String]()
+//    var infoToDisplay = [String]()
     var infos = [Info]()
     var state = "New York"
     
@@ -28,7 +28,7 @@ class InfoVC: UIViewController {
             let uid = user!.uid
             print(uid)
         }
-        
+        self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
 //        tableView.reloadData()
 //        DataService.sharedInstance().getRestaurants { (fetchedRestaurants) in
@@ -39,7 +39,7 @@ class InfoVC: UIViewController {
             self.infos = fetchedRestaurants
             self.tableView.reloadData()
         }
-        tableView.tableFooterView = UIView(frame: CGRectZero)
+//        tableView.tableFooterView = UIView(frame: CGRectZero)
 //        setupBackground()
         
     }
@@ -74,7 +74,7 @@ class InfoVC: UIViewController {
 //        tableView.backgroundView?.addSubview(back)
 //        tableView.backgroundColor = UIColor.blueColor()
 //        tableView.reloadData()
-        tableView.tableFooterView = UIView(frame: CGRectZero)
+//        tableView.tableFooterView = UIView(frame: CGRectZero)
         tableView.reloadData()
     }
 

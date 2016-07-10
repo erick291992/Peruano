@@ -89,8 +89,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="que-AI-e1Z">
-                                <rect key="frame" x="0.0" y="80" width="600" height="456"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="que-AI-e1Z">
+                                <rect key="frame" x="0.0" y="80" width="600" height="451"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="149" id="OC4-Nc-4VX" customClass="InfoTableViewCell" customModule="Peruano" customModuleProvider="target">
@@ -281,7 +281,7 @@
                             <constraint firstItem="cQD-EL-B8W" firstAttribute="width" secondItem="4v6-LI-tl6" secondAttribute="width" id="Fqi-oy-BGs"/>
                             <constraint firstItem="que-AI-e1Z" firstAttribute="leading" secondItem="oNL-Rs-Lya" secondAttribute="leadingMargin" id="HDp-pM-53V"/>
                             <constraint firstItem="que-AI-e1Z" firstAttribute="width" secondItem="4v6-LI-tl6" secondAttribute="width" multiplier="2" constant="60" id="MU3-Ks-jb1"/>
-                            <constraint firstItem="bZl-4q-QpL" firstAttribute="top" secondItem="que-AI-e1Z" secondAttribute="bottom" constant="15" id="OMg-kp-c63"/>
+                            <constraint firstItem="bZl-4q-QpL" firstAttribute="top" secondItem="que-AI-e1Z" secondAttribute="bottom" constant="20" id="OMg-kp-c63"/>
                             <constraint firstItem="cQD-EL-B8W" firstAttribute="trailing" secondItem="oNL-Rs-Lya" secondAttribute="trailingMargin" id="Pc4-fc-40c"/>
                             <constraint firstItem="que-AI-e1Z" firstAttribute="top" secondItem="4v6-LI-tl6" secondAttribute="bottom" constant="26" id="S3A-er-zPf"/>
                             <constraint firstItem="4v6-LI-tl6" firstAttribute="leading" secondItem="oNL-Rs-Lya" secondAttribute="leadingMargin" constant="66" id="WaS-Ll-JLV"/>
