@@ -25,6 +25,7 @@
 		CDBCB3A01D31BEA000454371 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB39F1D31BEA000454371 /* CustomViewCell.swift */; };
 		CDBCB3A21D31BFC600454371 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3A11D31BFC600454371 /* CustomButton.swift */; };
 		CDC720661D31C40F00CC5734 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */; };
+		CDC720681D31C57400CC5734 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC720671D31C57400CC5734 /* CategoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CDBCB39F1D31BEA000454371 /* CustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		CDBCB3A11D31BFC600454371 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDC720671D31C57400CC5734 /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		CDBCB3851D31AAB300454371 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CDC720671D31C57400CC5734 /* CategoryVC.swift */,
 				CDBCB39C1D31BDAF00454371 /* VideoVC.swift */,
 				CDBCB3901D31BA8100454371 /* EventVC.swift */,
 				CDBCB3881D31B67700454371 /* InfoVC.swift */,
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC720681D31C57400CC5734 /* CategoryVC.swift in Sources */,
 				CDBCB3A21D31BFC600454371 /* CustomButton.swift in Sources */,
 				CDBCB3951D31BAA000454371 /* EventTableViewCell.swift in Sources */,
 				CDBCB3A01D31BEA000454371 /* CustomViewCell.swift in Sources */,
