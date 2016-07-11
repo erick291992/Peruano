@@ -8,6 +8,10 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+import AddressBook
+import MapKit
+
 class InfoVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -153,5 +157,10 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource{
         
         return InfoTableViewCell()
     }
+    
+}
+extension InfoVC{
+    
+  
     
 }
