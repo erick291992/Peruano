@@ -158,9 +158,8 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource{
         return InfoTableViewCell()
     }
     
-}
-extension InfoVC{
-    
-  
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let info = infos[indexPath.row]
+        UrlAppLauncher.sharedInstance().launchMapUsingAddress(info.address)
+    }
 }

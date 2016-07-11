@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E9A2DB00A91EDB60B8BAFBE /* Pods_Peruano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B202FECEB573DCAEEA4531 /* Pods_Peruano.framework */; };
+		CD773A9B1D34388100EC0BDF /* UrlAppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD773A9A1D34388100EC0BDF /* UrlAppLauncher.swift */; };
 		CDBCB3741D31AA9000454371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3731D31AA9000454371 /* AppDelegate.swift */; };
 		CDBCB3791D31AA9000454371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBCB3771D31AA9000454371 /* Main.storyboard */; };
 		CDBCB37B1D31AA9000454371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBCB37A1D31AA9000454371 /* Assets.xcassets */; };
@@ -26,12 +27,14 @@
 		CDBCB3A21D31BFC600454371 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3A11D31BFC600454371 /* CustomButton.swift */; };
 		CDC720661D31C40F00CC5734 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */; };
 		CDC720681D31C57400CC5734 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC720671D31C57400CC5734 /* CategoryVC.swift */; };
+		CDC7206B1D33FEA800CC5734 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7206A1D33FEA800CC5734 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		22462A7B19E767DD25E53306 /* Pods-Peruano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peruano.release.xcconfig"; path = "Pods/Target Support Files/Pods-Peruano/Pods-Peruano.release.xcconfig"; sourceTree = "<group>"; };
 		40B202FECEB573DCAEEA4531 /* Pods_Peruano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peruano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4839607B488B9C21D14C00 /* Pods-Peruano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peruano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Peruano/Pods-Peruano.debug.xcconfig"; sourceTree = "<group>"; };
+		CD773A9A1D34388100EC0BDF /* UrlAppLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlAppLauncher.swift; sourceTree = "<group>"; };
 		CDBCB3701D31AA9000454371 /* Peruano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peruano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBCB3731D31AA9000454371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDBCB3781D31AA9000454371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		CDBCB3A11D31BFC600454371 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDC720671D31C57400CC5734 /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		CDC7206A1D33FEA800CC5734 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		CDBCB3721D31AA9000454371 /* Peruano */ = {
 			isa = PBXGroup;
 			children = (
+				CDC720691D33FE6500CC5734 /* Helpers */,
 				CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */,
 				CDBCB3971D31BCA700454371 /* View */,
 				CDBCB3961D31BC8D00454371 /* Model */,
@@ -148,6 +153,15 @@
 				CDBCB3A11D31BFC600454371 /* CustomButton.swift */,
 			);
 			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		CDC720691D33FE6500CC5734 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CDC7206A1D33FEA800CC5734 /* Extensions.swift */,
+				CD773A9A1D34388100EC0BDF /* UrlAppLauncher.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		E05072C2C2330BB3D50E1C3D /* Pods */ = {
@@ -288,11 +302,13 @@
 				CDBCB3951D31BAA000454371 /* EventTableViewCell.swift in Sources */,
 				CDBCB3A01D31BEA000454371 /* CustomViewCell.swift in Sources */,
 				CDBCB38B1D31B67700454371 /* InfoVC.swift in Sources */,
+				CD773A9B1D34388100EC0BDF /* UrlAppLauncher.swift in Sources */,
 				CDBCB38A1D31B67700454371 /* InfoTableViewCell.swift in Sources */,
 				CDBCB3741D31AA9000454371 /* AppDelegate.swift in Sources */,
 				CDBCB3911D31BA8100454371 /* EventVC.swift in Sources */,
 				CDBCB39D1D31BDAF00454371 /* VideoVC.swift in Sources */,
 				CDBCB3891D31B67700454371 /* Info.swift in Sources */,
+				CDC7206B1D33FEA800CC5734 /* Extensions.swift in Sources */,
 				CDBCB3931D31BA9300454371 /* Event.swift in Sources */,
 				CDBCB38D1D31B83700454371 /* DataService.swift in Sources */,
 				CDBCB3991D31BD6000454371 /* VideoTableViewCell.swift in Sources */,
