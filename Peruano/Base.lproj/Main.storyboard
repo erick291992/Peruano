@@ -346,6 +346,8 @@
                     <tabBarItem key="tabBarItem" title="Restaurant" image="restaurant" id="nH9-ow-YGW"/>
                     <navigationItem key="navigationItem" id="huy-XG-moF"/>
                     <connections>
+                        <outlet property="regionButton" destination="cQD-EL-B8W" id="l6e-q4-DiH"/>
+                        <outlet property="stateButton" destination="4v6-LI-tl6" id="uZB-nM-0Do"/>
                         <outlet property="tableView" destination="que-AI-e1Z" id="UGE-UH-a3F"/>
                     </connections>
                 </viewController>

@@ -12,9 +12,11 @@ import CoreLocation
 import AddressBook
 import MapKit
 
-class InfoVC: UIViewController {
+class InfoVC: UIViewController,CategoryViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var stateButton: CustomButton!
+    @IBOutlet weak var regionButton: CustomButton!
     
 //    var infoToDisplay = [String]()
     var infos = [Info]()
@@ -28,7 +30,7 @@ class InfoVC: UIViewController {
         
         FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
             let isAnonymous = user!.anonymous  // true
-            print("this is a ano \(isAnonymous)")
+            print("this is a isAnonymous \(isAnonymous)")
             let uid = user!.uid
             print(uid)
         }
@@ -88,20 +90,19 @@ class InfoVC: UIViewController {
     }
     
     @IBAction func statePressed(sender: AnyObject) {
-//        pickState()
+        pickState()
     }
     
     @IBAction func regionPressed(sender: AnyObject) {
 //        pickRegion()
     }
     
-//    func pickState(){
-//        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-//        
-//        controller.delegate = self
-//        
-//        self.presentViewController(controller, animated: true, completion: nil)
-//    }
+    func pickState(){
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
+        controller.selectedState = self.state
+        controller.delegate = self
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     
 //    func pickRegion(){
 //        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
@@ -112,16 +113,17 @@ class InfoVC: UIViewController {
 //        self.presentViewController(controller, animated: true, completion: nil)
 //    }
     
-//    func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: String?) {
-//        if let newCategory = category{
-//            print("this is a category \(newCategory)")
-//            self.state = newCategory
-//            print(state)
-//        }
-//        else{
-//            print("this is not a category")
-//        }
-//    }
+    func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: String?) {
+        if let newCategory = category{
+            print("this is a category \(newCategory)")
+            self.state = newCategory
+            
+            print(state)
+        }
+        else{
+            print("this is not a category")
+        }
+    }
     
     /*
     // MARK: - Navigation

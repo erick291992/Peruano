@@ -16,6 +16,8 @@ protocol CategoryViewControllerDelegate {
 class CategoryVC: UIViewController {
     var states = [String]()
     var delegate: CategoryViewControllerDelegate?
+    var categotyOne:Bool?
+    var categoryTwo:Bool?
     var selectedState: String?
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,19 +26,11 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CategoryVC view did load")
-        
-        FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
-            let isAnonymous = user!.anonymous  // true
-            print("this is a ano \(isAnonymous)")
-            let uid = user!.uid
-            print(uid)
-        }
-        
         if let selectedState = selectedState{
-//            DataService.sharedInstance().getRegion(selectedState, completionHandlerForGetRegion: { (fetchedRegion) in
-//                self.states = fetchedRegion
-//                self.tableView.reloadData()
-//            })
+            DataService.sharedInstance().getRegion(selectedState, completionHandlerForGetRegion: { (fetchedRegion) in
+                self.states = fetchedRegion
+                self.tableView.reloadData()
+            })
             print("this is the selected state")
         }
         else{

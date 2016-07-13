@@ -19,6 +19,11 @@ class InfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(InfoTableViewCell.phoneTapped(_:)))
+        tap.numberOfTapsRequired = 1
+        phoneLabel.addGestureRecognizer(tap)
+        phoneLabel.userInteractionEnabled = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -27,4 +32,9 @@ class InfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func phoneTapped(sender: UITapGestureRecognizer) {
+        if let phone = phoneLabel.text{
+            UrlAppLauncher.sharedInstance().launchPhoneUsingNumber(phone)
+        }
+    }
 }
