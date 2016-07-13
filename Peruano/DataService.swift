@@ -26,6 +26,32 @@ class DataService {
         return _REF_DATABASE.child("Video")
     }
     
+    func getCategoryOne(databasePath:String, completionHandlerForCategory:(fetchedArray:[String])->Void){
+        var categorys = [String]()
+        let REF_CATEGORY = _REF_DATABASE.child(databasePath)
+        REF_CATEGORY.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
+            for value in snapshot.children{
+                let val = value as! FIRDataSnapshot
+                print(val.key)
+                categorys.append(val.key)
+            }
+            completionHandlerForCategory(fetchedArray: categorys)
+        })
+    }
+    func getCategoryTwo(databasePath:String, completionHandlerForCategory:(fetchedArray:[String])->Void){
+        var categorys = [String]()
+        let REF_CATEGORY = _REF_DATABASE.child(databasePath)
+        REF_CATEGORY.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
+            for value in snapshot.children{
+                let val = value as! FIRDataSnapshot
+                print(val.key)
+                categorys.append(val.key)
+            }
+            completionHandlerForCategory(fetchedArray: categorys)
+        })
+    }
+    
+    
     func getStates(completionHandlerForGetStates:(fetchedStates:[String])->Void){
         var states = [String]()
         REF_STATES.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in

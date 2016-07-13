@@ -94,34 +94,42 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     @IBAction func regionPressed(sender: AnyObject) {
-//        pickRegion()
+        pickRegion()
     }
     
     func pickState(){
         let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-        controller.selectedState = self.state
         controller.delegate = self
+        controller.category = 1
+        controller.searchInDatabase = "States"
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
-//    func pickRegion(){
-//        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-//        
-//        controller.delegate = self
-//        controller.selectedState = self.state
-//        
-//        self.presentViewController(controller, animated: true, completion: nil)
-//    }
+    func pickRegion(){
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
+        controller.category = 2
+        controller.delegate = self
+        controller.searchInDatabase = "States/\(self.state)"
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     
-    func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: String?) {
-        if let newCategory = category{
-            print("this is a category \(newCategory)")
-            self.state = newCategory
-            
-            print(state)
+    
+    func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: Int?, withChoice choice:String?){
+        guard let choice = choice else{
+            return
         }
-        else{
-            print("this is not a category")
+        print("this is a choice \(choice)")
+        guard let category = category else{
+            return
+        }
+        if category == 1{
+            print("category 1")
+            state = choice
+            stateButton.setTitle(self.state, forState: .Normal)
+        }
+        if category == 2{
+            print("category 2")
+            regionButton.setTitle(choice, forState: .Normal)
         }
     }
     
