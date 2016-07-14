@@ -21,6 +21,7 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
 //    var infoToDisplay = [String]()
     var infos = [Info]()
     var state = "New York"
+    var region = "Long Island"
     
 
     override func viewDidLoad() {
@@ -35,61 +36,20 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
             print(uid)
         }
         self.automaticallyAdjustsScrollViewInsets = false
-        // Do any additional setup after loading the view.
-//        tableView.reloadData()
-//        DataService.sharedInstance().getRestaurants { (fetchedRestaurants) in
-//            self.infos = fetchedRestaurants
-//            self.tableView.reloadData()
-//        }
-        DataService.sharedInstance().getRestaurantsByRegion("New York", region: "Long Island") { (fetchedRestaurants) in
-            self.infos = fetchedRestaurants
-            self.tableView.reloadData()
-        }
-//        tableView.tableFooterView = UIView(frame: CGRectZero)
-//        setupBackground()
-        
     }
     
-//    let tableViewBackgroundView: TableViewBackgroundView = {
-//        let tb = TableViewBackgroundView()
-//        return tb
-//    }()
-    
-    private func setupBackground(){
-//        tableView.addSubview(tableViewBackgroundView)
-        let width = view.frame.size.width
-        let height = (view.frame.size.width) * 3/2
-        print(width)
-        print(height)
-        let dim = "V:[v0(\(height))]"
-        let dim2 = "H:[v0(\(width))]"
-//        tableViewBackgroundView.addConstraintsWithFormat(dim2, views: tableViewBackgroundView)
-//        tableViewBackgroundView.addConstraintsWithFormat(dim, views: tableViewBackgroundView)
-//        let back = TableViewBackgroundView(frame: CGRectMake(0, 0, width, height))
-//        let imageView = UIImageView(frame: CGRectMake(10, 0, width - 20, height - 10))
-//        let image = UIImage(named: "Christmas.jpg")
-//        imageView.contentMode = .ScaleAspectFill
-//        imageView.image = image
-//        tableView.backgroundView = UIImageView(image: UIImage(named: "naruto.jpg"))
-//        tableView.backgroundView = tableViewBackgroundView
-        
-//        tableView.backgroundView = back
-//        tableView.backgroundView = UIView()
-//        tableView.backgroundView?.addSubview(imageView)
-//        tableView.backgroundView = UIView()
-//        tableView.backgroundView?.addSubview(back)
-//        tableView.backgroundColor = UIColor.blueColor()
-//        tableView.reloadData()
-//        tableView.tableFooterView = UIView(frame: CGRectZero)
-        tableView.reloadData()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadRestaurants()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func statePressed(sender: AnyObject) {
+        regionButton.setTitle("Region", forState: .Normal)
         pickState()
     }
     
@@ -113,6 +73,13 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
+    func loadRestaurants(){
+        DataService.sharedInstance().getRestaurantsByRegion(state, region: region) { (fetchedRestaurants) in
+            self.infos = fetchedRestaurants
+            self.tableView.reloadData()
+        }
+    }
+    
     
     func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: Int?, withChoice choice:String?){
         guard let choice = choice else{
@@ -123,25 +90,15 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
             return
         }
         if category == 1{
-            print("category 1")
             state = choice
             stateButton.setTitle(self.state, forState: .Normal)
         }
         if category == 2{
-            print("category 2")
+            region = choice
             regionButton.setTitle(choice, forState: .Normal)
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func configureCell(cell:InfoTableViewCell, data:Info){
         cell.titleLabel.text = data.name
         cell.addressLabel.text = data.address
@@ -159,12 +116,10 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let info = infos[indexPath.row]
-        //        print(post.postDescription)
         if let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell") as? InfoTableViewCell{
             configureCell(cell, data: info)
             return cell
         }
-        
         return InfoTableViewCell()
     }
     

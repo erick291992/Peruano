@@ -137,28 +137,22 @@
                                     <action selector="regionPressed:" destination="ViM-hb-a2e" eventType="touchUpInside" id="AuH-Qt-qdL"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="que-AI-e1Z">
-                                <rect key="frame" x="0.0" y="78" width="600" height="451"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="que-AI-e1Z">
+                                <rect key="frame" x="0.0" y="80" width="600" height="451"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="92" id="OC4-Nc-4VX" customClass="InfoTableViewCell" customModule="Peruano" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="77" id="OC4-Nc-4VX" customClass="InfoTableViewCell" customModule="Peruano" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OC4-Nc-4VX" id="VHR-HZ-Dew">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daB-ov-Cli" customClass="CustomViewCell" customModule="Peruano" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="2" width="596" height="87"/>
+                                                    <rect key="frame" x="2" y="2" width="596" height="72"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOd-qr-alx">
-                                                            <rect key="frame" x="8" y="8" width="49" height="29"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-zU-Mne">
-                                                            <rect key="frame" x="8" y="37" width="100" height="20"/>
+                                                            <rect key="frame" x="8" y="34" width="465" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="2Sb-rg-a0h"/>
                                                                 <constraint firstAttribute="height" constant="20" id="8vS-MI-ik0"/>
@@ -170,11 +164,13 @@
                                                             <variation key="default">
                                                                 <mask key="constraints">
                                                                     <exclude reference="2Sb-rg-a0h"/>
+                                                                    <exclude reference="8vS-MI-ik0"/>
+                                                                    <exclude reference="Kg8-vh-dDl"/>
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mek-qr-W3w">
-                                                            <rect key="frame" x="243" y="37" width="110" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mek-qr-W3w">
+                                                            <rect key="frame" x="478" y="36" width="110" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="110" id="hQO-nW-gzY"/>
                                                                 <constraint firstAttribute="width" constant="110" id="yE8-1B-xpo"/>
@@ -189,8 +185,14 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noy-1t-CUV">
-                                                            <rect key="frame" x="552" y="37" width="36" height="15"/>
+                                                            <rect key="frame" x="8" y="54" width="36" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOd-qr-alx">
+                                                            <rect key="frame" x="8" y="0.0" width="49" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -205,22 +207,28 @@
                                                         <constraint firstItem="d7p-zU-Mne" firstAttribute="top" secondItem="mek-qr-W3w" secondAttribute="top" id="8HQ-SQ-nqG"/>
                                                         <constraint firstItem="Noy-1t-CUV" firstAttribute="bottom" secondItem="daB-ov-Cli" secondAttribute="bottomMargin" id="Arh-9V-nwA"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="centerX" secondItem="daB-ov-Cli" secondAttribute="centerX" id="B3N-Ug-F9f"/>
+                                                        <constraint firstItem="pOd-qr-alx" firstAttribute="top" secondItem="daB-ov-Cli" secondAttribute="top" id="Bpf-BP-hXZ"/>
                                                         <constraint firstItem="Noy-1t-CUV" firstAttribute="centerX" secondItem="daB-ov-Cli" secondAttribute="centerX" id="DxL-xw-30F"/>
                                                         <constraint firstItem="Noy-1t-CUV" firstAttribute="top" secondItem="mek-qr-W3w" secondAttribute="top" id="Hvy-nb-Uzf"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="centerY" secondItem="d7p-zU-Mne" secondAttribute="centerY" id="Hzd-A2-Zqq"/>
+                                                        <constraint firstItem="mek-qr-W3w" firstAttribute="trailing" secondItem="daB-ov-Cli" secondAttribute="trailingMargin" id="IyY-Rf-0ta"/>
                                                         <constraint firstItem="d7p-zU-Mne" firstAttribute="top" secondItem="pOd-qr-alx" secondAttribute="bottom" id="Me4-iF-HYZ"/>
-                                                        <constraint firstItem="d7p-zU-Mne" firstAttribute="top" secondItem="pOd-qr-alx" secondAttribute="bottom" id="Q1N-9w-TYs"/>
+                                                        <constraint firstItem="d7p-zU-Mne" firstAttribute="top" secondItem="pOd-qr-alx" secondAttribute="bottom" constant="5" id="Q1N-9w-TYs"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="leading" secondItem="d7p-zU-Mne" secondAttribute="trailing" id="SCp-oL-tyZ"/>
+                                                        <constraint firstItem="Noy-1t-CUV" firstAttribute="top" secondItem="d7p-zU-Mne" secondAttribute="bottom" constant="5" id="TcF-Ch-bz3"/>
                                                         <constraint firstItem="d7p-zU-Mne" firstAttribute="leading" secondItem="daB-ov-Cli" secondAttribute="leadingMargin" id="UUi-0a-waB"/>
                                                         <constraint firstItem="Noy-1t-CUV" firstAttribute="trailing" secondItem="daB-ov-Cli" secondAttribute="trailingMargin" id="WiO-VH-BtE"/>
                                                         <constraint firstAttribute="trailing" secondItem="pOd-qr-alx" secondAttribute="trailing" id="YU7-Uc-yaH"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="centerX" secondItem="daB-ov-Cli" secondAttribute="centerX" id="dwu-WP-C03"/>
                                                         <constraint firstItem="Noy-1t-CUV" firstAttribute="centerY" secondItem="daB-ov-Cli" secondAttribute="centerY" id="gCP-xI-2fZ"/>
+                                                        <constraint firstItem="mek-qr-W3w" firstAttribute="centerY" secondItem="daB-ov-Cli" secondAttribute="centerY" id="gMG-td-mmY"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="top" secondItem="d7p-zU-Mne" secondAttribute="top" id="lTE-43-yZX"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="leading" secondItem="d7p-zU-Mne" secondAttribute="trailing" id="pWw-44-mZt"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="centerY" secondItem="daB-ov-Cli" secondAttribute="centerY" id="q24-RD-yue"/>
                                                         <constraint firstItem="mek-qr-W3w" firstAttribute="top" secondItem="d7p-zU-Mne" secondAttribute="top" id="rxx-Zy-ICx"/>
+                                                        <constraint firstItem="mek-qr-W3w" firstAttribute="leading" secondItem="d7p-zU-Mne" secondAttribute="trailing" constant="5" id="tWi-WL-v2h"/>
                                                         <constraint firstItem="pOd-qr-alx" firstAttribute="top" secondItem="daB-ov-Cli" secondAttribute="topMargin" id="u8L-ul-1yi"/>
+                                                        <constraint firstItem="Noy-1t-CUV" firstAttribute="leading" secondItem="daB-ov-Cli" secondAttribute="leadingMargin" id="xzI-h3-haX"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -231,20 +239,25 @@
                                                         <mask key="constraints">
                                                             <exclude reference="5vr-jZ-IMm"/>
                                                             <exclude reference="YU7-Uc-yaH"/>
+                                                            <exclude reference="u8L-ul-1yi"/>
                                                             <exclude reference="3PZ-O7-lZt"/>
                                                             <exclude reference="6dg-V2-Se7"/>
                                                             <exclude reference="8HQ-SQ-nqG"/>
                                                             <exclude reference="Me4-iF-HYZ"/>
+                                                            <exclude reference="5UR-Ym-Fv8"/>
+                                                            <exclude reference="Arh-9V-nwA"/>
+                                                            <exclude reference="DxL-xw-30F"/>
+                                                            <exclude reference="Hvy-nb-Uzf"/>
+                                                            <exclude reference="WiO-VH-BtE"/>
+                                                            <exclude reference="gCP-xI-2fZ"/>
                                                             <exclude reference="B3N-Ug-F9f"/>
                                                             <exclude reference="Hzd-A2-Zqq"/>
                                                             <exclude reference="SCp-oL-tyZ"/>
+                                                            <exclude reference="dwu-WP-C03"/>
+                                                            <exclude reference="lTE-43-yZX"/>
                                                             <exclude reference="pWw-44-mZt"/>
                                                             <exclude reference="q24-RD-yue"/>
                                                             <exclude reference="rxx-Zy-ICx"/>
-                                                            <exclude reference="Arh-9V-nwA"/>
-                                                            <exclude reference="DxL-xw-30F"/>
-                                                            <exclude reference="WiO-VH-BtE"/>
-                                                            <exclude reference="gCP-xI-2fZ"/>
                                                         </mask>
                                                     </variation>
                                                 </view>

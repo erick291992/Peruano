@@ -31,7 +31,7 @@ class CategoryVC: UIViewController {
         super.viewDidLoad()
         print("CategoryVC view did load")
         DataService.sharedInstance().getCategoryOne(searchInDatabase, completionHandlerForCategory: { (fetchedArray) in
-            print(fetchedArray)
+//            print(fetchedArray)
             self.choices = fetchedArray
             self.tableView.reloadData()
         })

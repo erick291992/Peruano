@@ -32,7 +32,7 @@ class DataService {
         REF_CATEGORY.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
             for value in snapshot.children{
                 let val = value as! FIRDataSnapshot
-                print(val.key)
+//                print(val.key)
                 categorys.append(val.key)
             }
             completionHandlerForCategory(fetchedArray: categorys)
