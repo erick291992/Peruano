@@ -62,7 +62,7 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func pickRegion(){
-        launchCategoryVC(2, title: region, searchInDatabase: "States/\(self.state)")
+        launchCategoryVC(2, title: "Region", searchInDatabase: "States/\(self.state)")
     }
     
     func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
