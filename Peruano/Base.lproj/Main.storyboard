@@ -388,6 +388,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="SL1-ve-pZ1"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="State">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -411,7 +412,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Kcx-re-kIp"/>
                                 </constraints>
-                                <state key="normal" title="Region">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="None">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -661,7 +663,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="SZk-8G-Oe4"/>
                                 </constraints>
-                                <state key="normal" title="State">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Video">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -674,6 +677,9 @@
                                         <exclude reference="SZk-8G-Oe4"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="videoPressed:" destination="lvd-zu-Vad" eventType="touchUpInside" id="7qR-ga-qYn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Pz-yM-SMc" customClass="CustomButton" customModule="Peruano" customModuleProvider="target">
                                 <rect key="frame" x="310" y="40" width="270" height="30"/>
@@ -681,7 +687,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="bxI-Zv-qeA"/>
                                 </constraints>
-                                <state key="normal" title="Region">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Type">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -694,6 +701,9 @@
                                         <exclude reference="bxI-Zv-qeA"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="typePressed:" destination="lvd-zu-Vad" eventType="touchUpInside" id="5jS-Yu-7Ym"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aqe-FZ-6UZ">
                                 <rect key="frame" x="0.0" y="80" width="600" height="451"/>
@@ -827,6 +837,8 @@
                     <navigationItem key="navigationItem" id="iaZ-qx-5Xy"/>
                     <connections>
                         <outlet property="tableView" destination="Aqe-FZ-6UZ" id="y06-g3-Ixw"/>
+                        <outlet property="typeButton" destination="4Pz-yM-SMc" id="kuE-eF-dHq"/>
+                        <outlet property="videoButton" destination="CG3-Gl-NSa" id="ydP-eT-lAM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHP-IX-Vzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -868,8 +880,11 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="DonePressed:" destination="C1B-o6-Ywj" eventType="touchUpInside" id="TiT-Rs-XcU"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFA-8l-23h">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFA-8l-23h">
                                 <rect key="frame" x="270" y="44" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -897,6 +912,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="gqg-kq-zUx"/>
                     <connections>
                         <outlet property="tableView" destination="UK0-j3-MZm" id="OHj-LQ-Qdb"/>
+                        <outlet property="titleLabel" destination="gFA-8l-23h" id="2Ba-tu-431"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLa-Q1-Kja" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -58,18 +58,19 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func pickState(){
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-        controller.delegate = self
-        controller.category = 1
-        controller.searchInDatabase = "States"
-        self.presentViewController(controller, animated: true, completion: nil)
+        launchCategoryVC(1, title: "States", searchInDatabase: "States")
     }
     
     func pickRegion(){
+        launchCategoryVC(2, title: region, searchInDatabase: "States/\(self.state)")
+    }
+    
+    func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
         let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-        controller.category = 2
+        controller.category = category
+        controller.categoryTitle = title
         controller.delegate = self
-        controller.searchInDatabase = "States/\(self.state)"
+        controller.searchInDatabase = searchInDatabase
         self.presentViewController(controller, animated: true, completion: nil)
     }
     

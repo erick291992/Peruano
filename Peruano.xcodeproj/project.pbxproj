@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E9A2DB00A91EDB60B8BAFBE /* Pods_Peruano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B202FECEB573DCAEEA4531 /* Pods_Peruano.framework */; };
+		CD37EAA91D3858BC009BB1A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD37EAA81D3858BC009BB1A3 /* Constants.swift */; };
 		CD773A9B1D34388100EC0BDF /* UrlAppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD773A9A1D34388100EC0BDF /* UrlAppLauncher.swift */; };
 		CDBCB3741D31AA9000454371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3731D31AA9000454371 /* AppDelegate.swift */; };
 		CDBCB3791D31AA9000454371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBCB3771D31AA9000454371 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		22462A7B19E767DD25E53306 /* Pods-Peruano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peruano.release.xcconfig"; path = "Pods/Target Support Files/Pods-Peruano/Pods-Peruano.release.xcconfig"; sourceTree = "<group>"; };
 		40B202FECEB573DCAEEA4531 /* Pods_Peruano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peruano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4839607B488B9C21D14C00 /* Pods-Peruano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peruano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Peruano/Pods-Peruano.debug.xcconfig"; sourceTree = "<group>"; };
+		CD37EAA81D3858BC009BB1A3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD773A9A1D34388100EC0BDF /* UrlAppLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlAppLauncher.swift; sourceTree = "<group>"; };
 		CDBCB3701D31AA9000454371 /* Peruano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peruano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBCB3731D31AA9000454371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD37EAA71D3858B2009BB1A3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CD37EAA81D3858BC009BB1A3 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		CDBCB3671D31AA8F00454371 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		CDBCB3721D31AA9000454371 /* Peruano */ = {
 			isa = PBXGroup;
 			children = (
+				CD37EAA71D3858B2009BB1A3 /* Util */,
 				CDC720691D33FE6500CC5734 /* Helpers */,
 				CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */,
 				CDBCB3971D31BCA700454371 /* View */,
@@ -298,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC720681D31C57400CC5734 /* CategoryVC.swift in Sources */,
+				CD37EAA91D3858BC009BB1A3 /* Constants.swift in Sources */,
 				CDBCB3A21D31BFC600454371 /* CustomButton.swift in Sources */,
 				CDBCB3951D31BAA000454371 /* EventTableViewCell.swift in Sources */,
 				CDBCB3A01D31BEA000454371 /* CustomViewCell.swift in Sources */,

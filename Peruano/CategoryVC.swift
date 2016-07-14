@@ -23,35 +23,26 @@ class CategoryVC: UIViewController {
     var categotyOne = false
     var category:Int!
     var searchInDatabase:String!
+    var categoryTitle:String?
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("CategoryVC view did load")
+        titleLabel.text = categoryTitle
         DataService.sharedInstance().getCategoryOne(searchInDatabase, completionHandlerForCategory: { (fetchedArray) in
 //            print(fetchedArray)
             self.choices = fetchedArray
             self.tableView.reloadData()
         })
-//        if categotyOne{
-//            DataService.sharedInstance().getCategoryOne(searchInDatabase, completionHandlerForCategory: { (fetchedArray) in
-//                print(fetchedArray)
-//                self.choices = fetchedArray
-//                self.tableView.reloadData()
-//            })
-//        }
-//        if categoryTwo{
-//            DataService.sharedInstance().getCategoryOne(searchInDatabase, completionHandlerForCategory: { (fetchedArray) in
-//                print(fetchedArray)
-//                self.choices = fetchedArray
-//                self.tableView.reloadData()
-//            })
-//            print("this is the selected state")
-//        }
-        
     }
+    
+    @IBAction func DonePressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 
 }
 
