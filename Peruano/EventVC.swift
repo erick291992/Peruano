@@ -8,11 +8,14 @@
 
 import UIKit
 
-class EventVC: UIViewController {
+class EventVC: UIViewController, CategoryViewControllerDelegate {
 
     var events = [Event]()
+    var state = "New York"
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var stateButton: CustomButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +23,6 @@ class EventVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
-        DataService.sharedInstance().getEventsByState("New York") { (fetchedEvents) in
-            print(fetchedEvents.count)
-            self.events = fetchedEvents
-            self.tableView.reloadData()
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,18 +30,44 @@ class EventVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadEvents()
     }
-    */
     
+    @IBAction func statePressed(sender: AnyObject) {
+        pickState()
+    }
     
+    func pickState(){
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
+        controller.delegate = self
+        controller.category = 1
+        controller.searchInDatabase = "Events"
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: Int?, withChoice choice:String?){
+        guard let choice = choice else{
+            return
+        }
+        print("this is a choice \(choice)")
+        guard let category = category else{
+            return
+        }
+        if category == 1{
+            state = choice
+            stateButton.setTitle(self.state, forState: .Normal)
+        }
+    }
+    
+    func loadEvents(){
+        DataService.sharedInstance().getEventsByState(state) { (fetchedEvents) in
+            print(fetchedEvents.count)
+            self.events = fetchedEvents
+            self.tableView.reloadData()
+        }
+    }
     
     func configureCell(cell:EventTableViewCell, data:Event){
         cell.titleLabel.text = data.name
@@ -52,7 +75,6 @@ class EventVC: UIViewController {
         cell.dateLabel.text = data.date
         cell.phoneLabel.text = data.phone
     }
-
 }
 
 extension EventVC: UITableViewDelegate, UITableViewDataSource{

@@ -401,6 +401,9 @@
                                         <exclude reference="SL1-ve-pZ1"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="statePressed:" destination="RPF-ic-36c" eventType="touchUpInside" id="833-wg-rIV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plS-I5-zIb" customClass="CustomButton" customModule="Peruano" customModuleProvider="target">
                                 <rect key="frame" x="310" y="40" width="270" height="30"/>
@@ -632,6 +635,7 @@
                     <tabBarItem key="tabBarItem" title="Events" image="events" id="wKj-n4-8Pi"/>
                     <navigationItem key="navigationItem" id="Iz4-Em-tGi"/>
                     <connections>
+                        <outlet property="stateButton" destination="Fyf-wt-DgP" id="Z2S-Yj-yLr"/>
                         <outlet property="tableView" destination="lVn-fK-Bgz" id="byC-yg-ysm"/>
                     </connections>
                 </viewController>
