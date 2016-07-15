@@ -20,8 +20,8 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     
 //    var infoToDisplay = [String]()
     var infos = [Info]()
-    var state = "New York"
-    var region = "Long Island"
+    var state:String!
+    var region:String!
     
 
     override func viewDidLoad() {
@@ -62,7 +62,10 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func pickRegion(){
-        launchCategoryVC(2, title: "Region", searchInDatabase: "States/\(self.state)")
+        if state != nil{
+            launchCategoryVC(2, title: "Region", searchInDatabase: "States/\(self.state)")
+        }
+//        launchCategoryVC(2, title: "Region", searchInDatabase: "States/\(self.state)")
     }
     
     func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
@@ -75,9 +78,17 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func loadRestaurants(){
-        DataService.sharedInstance().getRestaurantsByRegion(state, region: region) { (fetchedRestaurants) in
-            self.infos = fetchedRestaurants
-            self.tableView.reloadData()
+        if state == nil || region == nil{
+            DataService.sharedInstance().getRestaurantsByRegion(Constants.RestaurantDefaults.STATE, region: Constants.RestaurantDefaults.REGION) { (fetchedRestaurants) in
+                self.infos = fetchedRestaurants
+                self.tableView.reloadData()
+            }
+        }
+        else{
+            DataService.sharedInstance().getRestaurantsByRegion(state, region: region) { (fetchedRestaurants) in
+                self.infos = fetchedRestaurants
+                self.tableView.reloadData()
+            }
         }
     }
     

@@ -82,6 +82,10 @@ class DataService {
             completionHandlerForRestaurants(fetchedRestaurants: restaurants)
         })
     }
+    
+    func getEveryThing(completionHandlerForRestaurants: (fetchedRestaurants:[Info])->Void){
+        
+    }
     func getRegion(state:String,completionHandlerForGetRegion:(fetchedRegion:[String])->Void){
         var regions = [String]()
         REF_STATES.child(state).observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
