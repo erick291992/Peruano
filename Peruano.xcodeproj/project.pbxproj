@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E9A2DB00A91EDB60B8BAFBE /* Pods_Peruano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B202FECEB573DCAEEA4531 /* Pods_Peruano.framework */; };
 		CD37EAA91D3858BC009BB1A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD37EAA81D3858BC009BB1A3 /* Constants.swift */; };
+		CD72550C1D3ACB8000E2A1C3 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72550B1D3ACB8000E2A1C3 /* AboutVC.swift */; };
 		CD773A9B1D34388100EC0BDF /* UrlAppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD773A9A1D34388100EC0BDF /* UrlAppLauncher.swift */; };
 		CDBCB3741D31AA9000454371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCB3731D31AA9000454371 /* AppDelegate.swift */; };
 		CDBCB3791D31AA9000454371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBCB3771D31AA9000454371 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		40B202FECEB573DCAEEA4531 /* Pods_Peruano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peruano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4839607B488B9C21D14C00 /* Pods-Peruano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peruano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Peruano/Pods-Peruano.debug.xcconfig"; sourceTree = "<group>"; };
 		CD37EAA81D3858BC009BB1A3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CD72550B1D3ACB8000E2A1C3 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		CD773A9A1D34388100EC0BDF /* UrlAppLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlAppLauncher.swift; sourceTree = "<group>"; };
 		CDBCB3701D31AA9000454371 /* Peruano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peruano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBCB3731D31AA9000454371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				CDC720671D31C57400CC5734 /* CategoryVC.swift */,
+				CD72550B1D3ACB8000E2A1C3 /* AboutVC.swift */,
 				CDBCB39C1D31BDAF00454371 /* VideoVC.swift */,
 				CDBCB3901D31BA8100454371 /* EventVC.swift */,
 				CDBCB3881D31B67700454371 /* InfoVC.swift */,
@@ -322,6 +325,7 @@
 				CDBCB3891D31B67700454371 /* Info.swift in Sources */,
 				CDC7206B1D33FEA800CC5734 /* Extensions.swift in Sources */,
 				CDBCB3931D31BA9300454371 /* Event.swift in Sources */,
+				CD72550C1D3ACB8000E2A1C3 /* AboutVC.swift in Sources */,
 				CDBCB38D1D31B83700454371 /* DataService.swift in Sources */,
 				CDBCB3991D31BD6000454371 /* VideoTableViewCell.swift in Sources */,
 				CDBCB39B1D31BD8800454371 /* Video.swift in Sources */,

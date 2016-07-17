@@ -12,16 +12,19 @@ struct Constants {
     struct RestaurantDefaults {
         static let STATE = "New York"
         static let REGION = "Long Island"
+        static let DatabasePath = "Restaurants"
     }
     
     struct EventDefaults {
         static let STATE = "New York"
         static let ALL = "All"
+        static let DatabasePath = "Events"
     }
     
     struct VideoDefaults {
         static let VIDEO = "Music"
         static let TYPE = "Cumbia"
+        static let DatabasePath = "Video"
         
     }
 }

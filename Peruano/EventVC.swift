@@ -11,15 +11,12 @@ import UIKit
 class EventVC: UIViewController, CategoryViewControllerDelegate {
 
     var events = [Event]()
-    var state = "New York"
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var stateButton: CustomButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("EventVC loaded")
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -40,10 +37,15 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     }
     
     func pickState(){
+        launchCategoryVC(1, title: "State", searchInDatabase: "Events")
+    }
+    
+    func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
         let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
+        controller.category = category
+        controller.categoryTitle = title
         controller.delegate = self
-        controller.category = 1
-        controller.searchInDatabase = "Events"
+        controller.searchInDatabase = searchInDatabase
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
@@ -51,19 +53,17 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
         guard let choice = choice else{
             return
         }
-        print("this is a choice \(choice)")
         guard let category = category else{
             return
         }
         if category == 1{
-            state = choice
-            stateButton.setTitle(self.state, forState: .Normal)
+            stateButton.setTitle(choice, forState: .Normal)
         }
     }
     
     func loadEvents(){
-        DataService.sharedInstance().getEventsByState(state) { (fetchedEvents) in
-            print(fetchedEvents.count)
+        DataService.sharedInstance().getEventsByState(stateButton.currentTitle!) { (fetchedEvents) in
+//            print(fetchedEvents.count)
             self.events = fetchedEvents
             self.tableView.reloadData()
         }
@@ -85,13 +85,10 @@ extension EventVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let event = events[indexPath.row]
-        print(event.name)
-        //        print(post.postDescription)
         if let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as? EventTableViewCell{
             configureCell(cell, data: event)
             return cell
         }
-        
         return EventTableViewCell()
     }
     

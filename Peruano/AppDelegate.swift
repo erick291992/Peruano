@@ -21,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().translucent = false
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
         UITabBar.appearance().tintColor = UIColor.redColor()
+        // apply color chages to all navigationbars in app
+//        UINavigationBar.appearance().translucent = false
+//        UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
+        UINavigationBar.appearance().barTintColor = UIColor.redColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+//        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
         return true
     }
 

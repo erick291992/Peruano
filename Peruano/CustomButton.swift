@@ -28,4 +28,16 @@ import UIKit
     override func contentRectForBounds(bounds: CGRect) -> CGRect {
         return CGRectInset(bounds, 10, 0)
     }
+    
+    @IBInspectable var buttonBorderWidth:CGFloat = 0{
+        didSet{
+            layer.borderWidth = buttonBorderWidth
+        }
+    }
+    
+    @IBInspectable var buttonBorderColor:UIColor = UIColor.whiteColor(){
+        didSet{
+            layer.borderColor = buttonBorderColor.CGColor
+        }
+    }
 }

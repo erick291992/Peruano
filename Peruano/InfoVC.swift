@@ -20,9 +20,6 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     
 //    var infoToDisplay = [String]()
     var infos = [Info]()
-    var state:String!
-    var region:String!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,14 +55,11 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func pickState(){
-        launchCategoryVC(1, title: "States", searchInDatabase: "States")
+        launchCategoryVC(1, title: "States", searchInDatabase: Constants.RestaurantDefaults.DatabasePath)
     }
     
     func pickRegion(){
-        if state != nil{
-            launchCategoryVC(2, title: "Region", searchInDatabase: "States/\(self.state)")
-        }
-//        launchCategoryVC(2, title: "Region", searchInDatabase: "States/\(self.state)")
+        launchCategoryVC(2, title: "Region", searchInDatabase: "\(Constants.RestaurantDefaults.DatabasePath)/\(stateButton.currentTitle!)")
     }
     
     func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
@@ -78,14 +72,14 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func loadRestaurants(){
-        if state == nil || region == nil{
-            DataService.sharedInstance().getRestaurantsByRegion(Constants.RestaurantDefaults.STATE, region: Constants.RestaurantDefaults.REGION) { (fetchedRestaurants) in
+        if regionButton.currentTitle! == "All"{
+            DataService.sharedInstance().getEveryThing(stateButton.currentTitle!) { (fetchedRestaurants) in
                 self.infos = fetchedRestaurants
                 self.tableView.reloadData()
             }
         }
         else{
-            DataService.sharedInstance().getRestaurantsByRegion(state, region: region) { (fetchedRestaurants) in
+            DataService.sharedInstance().getRestaurantsByRegion(stateButton.currentTitle!, region: regionButton.currentTitle!) { (fetchedRestaurants) in
                 self.infos = fetchedRestaurants
                 self.tableView.reloadData()
             }
@@ -97,16 +91,13 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
         guard let choice = choice else{
             return
         }
-        print("this is a choice \(choice)")
         guard let category = category else{
             return
         }
         if category == 1{
-            state = choice
-            stateButton.setTitle(self.state, forState: .Normal)
+            stateButton.setTitle(choice, forState: .Normal)
         }
         if category == 2{
-            region = choice
             regionButton.setTitle(choice, forState: .Normal)
         }
     }

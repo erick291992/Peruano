@@ -11,8 +11,6 @@ import UIKit
 
 class VideoVC: UIViewController, CategoryViewControllerDelegate {
     var videos = [Video]()
-    var videoCategory = "Music"
-    var videoType = "Cumbia"
     
     @IBOutlet weak var videoButton: CustomButton!
     @IBOutlet weak var typeButton: CustomButton!
@@ -39,7 +37,7 @@ class VideoVC: UIViewController, CategoryViewControllerDelegate {
 
     
     func loadVideos(){
-        DataService.sharedInstance().getVideosByCategory(videoCategory, type: videoType) { (fetchedVideos) in
+        DataService.sharedInstance().getVideosByCategory(videoButton.currentTitle!, type: typeButton.currentTitle!) { (fetchedVideos) in
             self.videos = fetchedVideos
             self.tableView.reloadData()
         }
@@ -56,7 +54,7 @@ class VideoVC: UIViewController, CategoryViewControllerDelegate {
         let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
         controller.category = 2
         controller.delegate = self
-        controller.searchInDatabase = "Video/\(self.videoCategory)"
+        controller.searchInDatabase = "Video/\(videoButton.currentTitle!)"
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
@@ -69,9 +67,7 @@ class VideoVC: UIViewController, CategoryViewControllerDelegate {
             return
         }
         if category == 1{
-            videoCategory = choice
             if choice == "Movie" || choice == "Comedy"{
-                videoType = "All"
                 typeButton.enabled = false
                 typeButton.setTitle("All", forState: .Normal)
             }
@@ -81,7 +77,6 @@ class VideoVC: UIViewController, CategoryViewControllerDelegate {
             videoButton.setTitle(choice, forState: .Normal)
         }
         if category == 2{
-            videoType = choice
             typeButton.setTitle(choice, forState: .Normal)
         }
     }

@@ -38,18 +38,6 @@ class DataService {
             completionHandlerForCategory(fetchedArray: categorys)
         })
     }
-    func getCategoryTwo(databasePath:String, completionHandlerForCategory:(fetchedArray:[String])->Void){
-        var categorys = [String]()
-        let REF_CATEGORY = _REF_DATABASE.child(databasePath)
-        REF_CATEGORY.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
-            for value in snapshot.children{
-                let val = value as! FIRDataSnapshot
-                print(val.key)
-                categorys.append(val.key)
-            }
-            completionHandlerForCategory(fetchedArray: categorys)
-        })
-    }
     
     
     func getStates(completionHandlerForGetStates:(fetchedStates:[String])->Void){
@@ -83,15 +71,25 @@ class DataService {
         })
     }
     
-    func getEveryThing(completionHandlerForRestaurants: (fetchedRestaurants:[Info])->Void){
-        
+    func getEveryThing(state:String,completionHandlerForRestaurants:(fetchedRestaurants:[Info])->Void){
+        REF_RESTAURANTS.child(state).observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
+            var restaurants = [Info]()
+            for value in snapshot.children{
+                let region = value as! FIRDataSnapshot
+                self.REF_RESTAURANTS.child(state).child(region.key).queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
+                    let restaurant = Info(snapshot: snapshot)
+                    restaurants.append(restaurant)
+                    completionHandlerForRestaurants(fetchedRestaurants: restaurants)
+                })
+            }
+        })
     }
     func getRegion(state:String,completionHandlerForGetRegion:(fetchedRegion:[String])->Void){
         var regions = [String]()
         REF_STATES.child(state).observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
             for value in snapshot.children{
                 let region = value as! FIRDataSnapshot
-                print(region.key)
+//                print(region.key)
                 regions.append(region.key)
             }
             completionHandlerForGetRegion(fetchedRegion: regions)
