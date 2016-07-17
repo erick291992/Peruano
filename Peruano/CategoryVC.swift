@@ -10,11 +10,7 @@ import UIKit
 import Firebase
 
 protocol CategoryViewControllerDelegate {
-//    func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: String?)
     func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: Int?, withChoice choice:String?)
-    
-//    func firstCategoryPicker(categoryPicker: CategoryVC, didPickCategory category: String?)
-//    func firstCategoryPicker(categoryPicker: CategoryVC, didPickCategory category: String?)
 }
 
 class CategoryVC: UIViewController {
@@ -72,4 +68,14 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource{
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+}
+extension UIViewController{
+    func launchCategoryVC(category:Int, title:String, searchInDatabase:String, delegate:CategoryViewControllerDelegate){
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
+        controller.category = category
+        controller.categoryTitle = title
+        controller.delegate = delegate
+        controller.searchInDatabase = searchInDatabase
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
 }

@@ -27,6 +27,17 @@ class UrlAppLauncher {
         let targetURL = NSURL(string: url)!
         launchIfAppAvailable(targetURL)
     }
+    func launchYoutubeUsingLink(link: String){
+        let newLink = link.stringByReplacingOccurrencesOfString("https://www.youtube.com/watch?v=", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let url = "youtube://watch?v=\(newLink)"
+        let targetURL = NSURL(string: url)!
+        launchIfAppAvailable(targetURL)
+    }
+    
+    func openLink(link:String){
+        launchIfAppAvailable(NSURL(string: link)!)
+    }
+    
     private func launchIfAppAvailable(targetURL:NSURL){
         let isAvailable = UIApplication.sharedApplication().canOpenURL(targetURL)
         if isAvailable{

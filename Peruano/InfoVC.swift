@@ -55,11 +55,11 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func pickState(){
-        launchCategoryVC(1, title: "States", searchInDatabase: Constants.RestaurantDefaults.DatabasePath)
+        launchCategoryVC(1, title: Constants.CategoryTitles.STATES, searchInDatabase: Constants.RestaurantDefaults.DatabasePath)
     }
     
     func pickRegion(){
-        launchCategoryVC(2, title: "Region", searchInDatabase: "\(Constants.RestaurantDefaults.DatabasePath)/\(stateButton.currentTitle!)")
+        launchCategoryVC(2, title: Constants.CategoryTitles.REGION, searchInDatabase: "\(Constants.RestaurantDefaults.DatabasePath)/\(stateButton.currentTitle!)")
     }
     
     func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
@@ -107,6 +107,7 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
         cell.addressLabel.text = data.address
         cell.hoursLabel.text = data.hours
         cell.phoneLabel.text = data.phone
+        cell.urlLink = data.link
     }
 
 }
@@ -124,10 +125,5 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource{
             return cell
         }
         return InfoTableViewCell()
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let info = infos[indexPath.row]
-        UrlAppLauncher.sharedInstance().launchMapUsingAddress(info.address)
     }
 }

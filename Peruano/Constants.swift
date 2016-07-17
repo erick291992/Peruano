@@ -28,6 +28,13 @@ struct Constants {
         
     }
     
+    struct CategoryTitles {
+        static let STATES = "States"
+        static let REGION = "Regions"
+        static let VIDEO = "Videos"
+        static let TYPE = "Types"
+    }
+    
     struct Selectors {
         static let KeyboardWillShow: Selector = "keyboardWillShow:"
         static let KeyboardWillHide: Selector = "keyboardWillHide:"

@@ -94,7 +94,7 @@ extension FeedbackVC: UITextViewDelegate {
     
     func keyboardWillHide(notification: NSNotification) {
         if keyboardOnScreen {
-            let height = tabBarController?.tabBar.frame.height
+//            let height = tabBarController?.tabBar.frame.height
             view.frame.origin.y = 0.0
         }
     }

@@ -37,7 +37,7 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     }
     
     func pickState(){
-        launchCategoryVC(1, title: "State", searchInDatabase: "Events")
+        launchCategoryVC(1, title: Constants.CategoryTitles.STATES, searchInDatabase: Constants.EventDefaults.DatabasePath)
     }
     
     func launchCategoryVC(category:Int, title:String, searchInDatabase:String){

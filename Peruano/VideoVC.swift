@@ -25,14 +25,15 @@ class VideoVC: UIViewController, CategoryViewControllerDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadVideos()
+
     }
     
     @IBAction func videoPressed(sender: AnyObject) {
-        pickVideo()
+        launchCategoryVC(1, title: Constants.CategoryTitles.VIDEO, searchInDatabase: Constants.VideoDefaults.DatabasePath, delegate: self)
     }
     
     @IBAction func typePressed(sender: AnyObject) {
-        pickType()
+        launchCategoryVC(2, title: Constants.CategoryTitles.TYPE, searchInDatabase: "\(Constants.VideoDefaults.DatabasePath)/\(videoButton.currentTitle!)", delegate: self)
     }
 
     
@@ -41,21 +42,6 @@ class VideoVC: UIViewController, CategoryViewControllerDelegate {
             self.videos = fetchedVideos
             self.tableView.reloadData()
         }
-    }
-    func pickVideo(){
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-        controller.delegate = self
-        controller.category = 1
-        controller.searchInDatabase = "Video"
-        self.presentViewController(controller, animated: true, completion: nil)
-    }
-    
-    func pickType(){
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-        controller.category = 2
-        controller.delegate = self
-        controller.searchInDatabase = "Video/\(videoButton.currentTitle!)"
-        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: Int?, withChoice choice:String?){
@@ -103,4 +89,8 @@ extension VideoVC: UITableViewDelegate, UITableViewDataSource{
         return EventTableViewCell()
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let video = videos[indexPath.row]
+        UrlAppLauncher.sharedInstance().launchYoutubeUsingLink(video.urlLink)
+    }
 }
