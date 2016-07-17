@@ -27,4 +27,11 @@ struct Constants {
         static let DatabasePath = "Video"
         
     }
+    
+    struct Selectors {
+        static let KeyboardWillShow: Selector = "keyboardWillShow:"
+        static let KeyboardWillHide: Selector = "keyboardWillHide:"
+        static let KeyboardDidShow: Selector = "keyboardDidShow:"
+        static let KeyboardDidHide: Selector = "keyboardDidHide:"
+    }
 }
