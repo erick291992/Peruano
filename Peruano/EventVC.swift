@@ -74,6 +74,7 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
         cell.addressLabel.text = data.address
         cell.dateLabel.text = data.date
         cell.phoneLabel.text = data.phone
+        cell.urlLink = data.link
     }
 }
 
