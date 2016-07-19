@@ -30,6 +30,7 @@ class FeedbackVC: UIViewController {
         subscribeToNotification(UIKeyboardWillHideNotification, selector: Constants.Selectors.KeyboardWillHide)
         subscribeToNotification(UIKeyboardDidShowNotification, selector: Constants.Selectors.KeyboardDidShow)
         subscribeToNotification(UIKeyboardDidHideNotification, selector: Constants.Selectors.KeyboardDidHide)
+//        DataService.sharedInstance().postFeedBack("www.google.com", comment: "this is a link")
     }
     
     @IBAction func sendPressed(sender: AnyObject) {
@@ -46,55 +47,25 @@ extension FeedbackVC: UITextViewDelegate {
     // MARK: UITextViewDelegate
     
     // MARK: Show/Hide Keyboard
-    func textViewDidBeginEditing(textView: UITextView) {
-        print("begin edit")
-    }
     
     func textViewDidEndEditing(textView: UITextView) {
         activeField = nil
     }
-//    func keybardShow(){
-//        if !keyboardOnScreen {
-//            let height = tabBarController?.tabBar.frame.height
-//            view.frame.origin.y -= (keyboardHeight(notification) - height!)
-//        }
-//    }
     
     func keyboardWillShow(notification: NSNotification) {
-//        if commentTextView.isFirstResponder(){
-//            print("first responder")
-//            let height = tabBarController?.tabBar.frame.height
-//            if commentTextView.frame.origin.y > view.frame.height - (keyboardHeight(notification) - height!){
-//                print("keyshow")
-//                if !keyboardOnScreen {
-//                    print("key show screen")
-//                    view.frame.origin.y -= (keyboardHeight(notification) - height!)
-//                }
-//                
-//            }
-//        }
         let height = tabBarController?.tabBar.frame.height
         let firstResponder = getFirstRespondet()
         if firstResponder.frame.origin.y + (firstResponder.frame.height) > view.frame.height - (keyboardHeight(notification) - height!){
-            print("keyshow")
             if !keyboardOnScreen {
                 let distance = view.frame.height - (sendButton.frame.origin.y)
                 view.frame.origin.y -= (keyboardHeight(notification) - height!) - distance
             }
             
         }
-//        if commentTextView.isFirstResponder() {
-//            print("comment")
-//            if !keyboardOnScreen {
-//                let height = tabBarController?.tabBar.frame.height
-//                view.frame.origin.y -= (keyboardHeight(notification) - height!)
-//            }
-//        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if keyboardOnScreen {
-//            let height = tabBarController?.tabBar.frame.height
             view.frame.origin.y = 0.0
         }
     }

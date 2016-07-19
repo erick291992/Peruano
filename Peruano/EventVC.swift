@@ -33,20 +33,7 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     }
     
     @IBAction func statePressed(sender: AnyObject) {
-        pickState()
-    }
-    
-    func pickState(){
-        launchCategoryVC(1, title: Constants.CategoryTitles.STATES, searchInDatabase: Constants.EventDefaults.DatabasePath)
-    }
-    
-    func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-        controller.category = category
-        controller.categoryTitle = title
-        controller.delegate = self
-        controller.searchInDatabase = searchInDatabase
-        self.presentViewController(controller, animated: true, completion: nil)
+        launchCategoryVC(1, title: Constants.CategoryTitles.STATES, searchInDatabase: Constants.EventDefaults.DatabasePath, delegate: self)
     }
     
     func categoryPicker(categoryPicker: CategoryVC, didPickCategory category: Int?, withChoice choice:String?){

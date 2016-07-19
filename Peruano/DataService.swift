@@ -25,6 +25,9 @@ class DataService {
     var REF_VIDEOS:FIRDatabaseReference {
         return _REF_DATABASE.child("Video")
     }
+    var REF_FEEDBACK:FIRDatabaseReference {
+        return _REF_DATABASE.child("Feedback")
+    }
     
     func getCategoryOne(databasePath:String, completionHandlerForCategory:(fetchedArray:[String])->Void){
         var categorys = [String]()
@@ -37,6 +40,13 @@ class DataService {
             }
             completionHandlerForCategory(fetchedArray: categorys)
         })
+    }
+    
+    func postFeedBack(website:String, comment:String){
+        let key = REF_FEEDBACK.childByAutoId().key
+        let post = ["website": website,
+                    "comment": comment]
+        REF_FEEDBACK.child(key).setValue(post)
     }
     
     

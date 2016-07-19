@@ -55,20 +55,11 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     }
     
     func pickState(){
-        launchCategoryVC(1, title: Constants.CategoryTitles.STATES, searchInDatabase: Constants.RestaurantDefaults.DatabasePath)
+        launchCategoryVC(1, title: Constants.CategoryTitles.STATES, searchInDatabase: Constants.RestaurantDefaults.DatabasePath, delegate: self)
     }
     
     func pickRegion(){
-        launchCategoryVC(2, title: Constants.CategoryTitles.REGION, searchInDatabase: "\(Constants.RestaurantDefaults.DatabasePath)/\(stateButton.currentTitle!)")
-    }
-    
-    func launchCategoryVC(category:Int, title:String, searchInDatabase:String){
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("CategoryVC") as! CategoryVC
-        controller.category = category
-        controller.categoryTitle = title
-        controller.delegate = self
-        controller.searchInDatabase = searchInDatabase
-        self.presentViewController(controller, animated: true, completion: nil)
+        launchCategoryVC(2, title: Constants.CategoryTitles.REGION, searchInDatabase: "\(Constants.RestaurantDefaults.DatabasePath)/\(stateButton.currentTitle!)", delegate: self)
     }
     
     func loadRestaurants(){
