@@ -19,10 +19,8 @@ class UrlAppLauncher {
         launchIfAppAvailable(targetURL)
     }
     func launchPhoneUsingNumber(phone:String){
-//        let number = phone.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        let ph = "(555) 555-5555"
-//        let phone = ph.formatStringForPhone()
-        let phone = replacePunctuationSpace(ph)
+        let number = phone.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let phone = replacePunctuationSpace(number)
         let url = "tel://\(phone)"
         let targetURL = NSURL(string: url)!
         launchIfAppAvailable(targetURL)
@@ -52,7 +50,6 @@ class UrlAppLauncher {
         
         for character in characters{
             newString = newString.stringByReplacingOccurrencesOfString(character, withString: "")
-            print("Replacing \(character)  ... \(newString)")
         }
         return newString
     }

@@ -26,14 +26,25 @@ class FeedbackVC: UIViewController {
         commentTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         commentTextView.layer.cornerRadius = 4
 
-        subscribeToNotification(UIKeyboardWillShowNotification, selector: Constants.Selectors.KeyboardWillShow)
-        subscribeToNotification(UIKeyboardWillHideNotification, selector: Constants.Selectors.KeyboardWillHide)
-        subscribeToNotification(UIKeyboardDidShowNotification, selector: Constants.Selectors.KeyboardDidShow)
-        subscribeToNotification(UIKeyboardDidHideNotification, selector: Constants.Selectors.KeyboardDidHide)
+        subscribeToNotification(UIKeyboardWillShowNotification, selector: #selector(FeedbackVC.keyboardWillShow(_:)))
+        subscribeToNotification(UIKeyboardWillHideNotification, selector: #selector(FeedbackVC.keyboardWillHide(_:)))
+        subscribeToNotification(UIKeyboardDidShowNotification, selector: #selector(FeedbackVC.keyboardDidShow(_:)))
+        subscribeToNotification(UIKeyboardDidHideNotification, selector: #selector(FeedbackVC.keyboardDidHide(_:)))
 //        DataService.sharedInstance().postFeedBack("www.google.com", comment: "this is a link")
     }
     
     @IBAction func sendPressed(sender: AnyObject) {
+        guard websiteTextField.text == nil || websiteTextField.text == "" else{
+            let alert = self.basicAlert("Warning", message: "Place not found", action: "OK")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        guard commentTextView.text == nil || commentTextView.text == "" else{
+            let alert = self.basicAlert("Warning", message: "Place not found", action: "OK")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        DataService.sharedInstance().postFeedBack(websiteTextField.text!, comment: commentTextView.text!)
     }
     
     
@@ -88,6 +99,13 @@ extension FeedbackVC: UITextViewDelegate {
         else{
             return UIView()
         }
+    }
+    
+    private func basicAlert(tittle:String, message:String, action: String)-> UIAlertController{
+        let alert = UIAlertController(title: tittle, message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: action, style: .Default, handler: nil)
+        alert.addAction(action)
+        return alert
     }
     
     private func keyboardHeight(notification: NSNotification) -> CGFloat {

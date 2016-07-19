@@ -29,7 +29,6 @@ class CategoryVC: UIViewController {
         super.viewDidLoad()
         titleLabel.text = categoryTitle
         DataService.sharedInstance().getCategoryOne(searchInDatabase, completionHandlerForCategory: { (fetchedArray) in
-//            print(fetchedArray)
             self.choices = fetchedArray
             self.tableView.reloadData()
         })
@@ -50,7 +49,6 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let choice = choices[indexPath.row]
-        //        print(post.postDescription)
         if let cell = tableView.dequeueReusableCellWithIdentifier("Cell"){
             cell.textLabel!.text = choice
             return cell
@@ -64,7 +62,6 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let choice = choices[indexPath.row]
         delegate?.categoryPicker(self, didPickCategory: category, withChoice: choice)
-//        delegate?.categoryPicker(self, didPickCategory: choice)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -34,11 +34,4 @@ struct Constants {
         static let VIDEO = "Videos"
         static let TYPE = "Types"
     }
-    
-    struct Selectors {
-        static let KeyboardWillShow: Selector = "keyboardWillShow:"
-        static let KeyboardWillHide: Selector = "keyboardWillHide:"
-        static let KeyboardDidShow: Selector = "keyboardDidShow:"
-        static let KeyboardDidHide: Selector = "keyboardDidHide:"
-    }
 }

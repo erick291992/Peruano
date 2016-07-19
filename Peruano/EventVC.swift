@@ -50,7 +50,6 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     
     func loadEvents(){
         DataService.sharedInstance().getEventsByState(stateButton.currentTitle!) { (fetchedEvents) in
-//            print(fetchedEvents.count)
             self.events = fetchedEvents
             self.tableView.reloadData()
         }
