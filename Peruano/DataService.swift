@@ -44,8 +44,16 @@ class DataService {
     
     func postFeedBack(website:String, comment:String){
         let key = REF_FEEDBACK.childByAutoId().key
-        let post = ["website": website,
-                    "comment": comment]
+        var post = [String:String]()
+        let web = website.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let comm = comment.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        print(web)
+        if web != ""{
+            post["website"] = website
+        }
+        if comm != ""{
+            post["comment"] = comment
+        }
         REF_FEEDBACK.child(key).setValue(post)
     }
     

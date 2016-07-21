@@ -25,13 +25,6 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
-            let isAnonymous = user!.anonymous  // true
-            print("this is a isAnonymous \(isAnonymous)")
-            let uid = user!.uid
-            print(uid)
-        }
         self.automaticallyAdjustsScrollViewInsets = false
     }
     

@@ -34,16 +34,6 @@ class FeedbackVC: UIViewController {
     }
     
     @IBAction func sendPressed(sender: AnyObject) {
-        guard websiteTextField.text == nil || websiteTextField.text == "" else{
-            let alert = self.basicAlert("Warning", message: "Place not found", action: "OK")
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
-        }
-        guard commentTextView.text == nil || commentTextView.text == "" else{
-            let alert = self.basicAlert("Warning", message: "Place not found", action: "OK")
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
-        }
         DataService.sharedInstance().postFeedBack(websiteTextField.text!, comment: commentTextView.text!)
     }
     

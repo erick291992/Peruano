@@ -61,6 +61,9 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
         cell.dateLabel.text = data.date
         cell.phoneLabel.text = data.phone
         cell.urlLink = data.link
+        if let imageLink = data.imageUrl{
+            cell.eventImageView.loadImageUsingUrlString(imageLink)
+        }
     }
 }
 

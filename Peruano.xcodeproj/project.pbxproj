@@ -31,6 +31,7 @@
 		CDC720661D31C40F00CC5734 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */; };
 		CDC720681D31C57400CC5734 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC720671D31C57400CC5734 /* CategoryVC.swift */; };
 		CDC7206B1D33FEA800CC5734 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7206A1D33FEA800CC5734 /* Extensions.swift */; };
+		CDE73D071D414E7200AD6B9B /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE73D061D414E7200AD6B9B /* IntroVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		CDC720651D31C40F00CC5734 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDC720671D31C57400CC5734 /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		CDC7206A1D33FEA800CC5734 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CDE73D061D414E7200AD6B9B /* IntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				CDBCB3901D31BA8100454371 /* EventVC.swift */,
 				CDBCB3881D31B67700454371 /* InfoVC.swift */,
 				CD72550D1D3B1C6D00E2A1C3 /* FeedbackVC.swift */,
+				CDE73D061D414E7200AD6B9B /* IntroVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				CDBCB3A21D31BFC600454371 /* CustomButton.swift in Sources */,
 				CDBCB3951D31BAA000454371 /* EventTableViewCell.swift in Sources */,
 				CDBCB3A01D31BEA000454371 /* CustomViewCell.swift in Sources */,
+				CDE73D071D414E7200AD6B9B /* IntroVC.swift in Sources */,
 				CDBCB38B1D31B67700454371 /* InfoVC.swift in Sources */,
 				CD773A9B1D34388100EC0BDF /* UrlAppLauncher.swift in Sources */,
 				CDBCB38A1D31B67700454371 /* InfoTableViewCell.swift in Sources */,
