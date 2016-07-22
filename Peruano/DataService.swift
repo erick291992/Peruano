@@ -29,7 +29,7 @@ class DataService {
         return _REF_DATABASE.child("Feedback")
     }
     
-    func getCategoryOne(databasePath:String, completionHandlerForCategory:(fetchedArray:[String])->Void){
+    func getCategory(databasePath:String, completionHandlerForCategory:(fetchedArray:[String], reference:FIRDatabaseReference)->Void){
         var categorys = [String]()
         let REF_CATEGORY = _REF_DATABASE.child(databasePath)
         REF_CATEGORY.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
@@ -38,7 +38,7 @@ class DataService {
 //                print(val.key)
                 categorys.append(val.key)
             }
-            completionHandlerForCategory(fetchedArray: categorys)
+            completionHandlerForCategory(fetchedArray: categorys, reference: REF_CATEGORY)
         })
     }
     
@@ -57,77 +57,53 @@ class DataService {
         REF_FEEDBACK.child(key).setValue(post)
     }
     
-    
-    func getStates(completionHandlerForGetStates:(fetchedStates:[String])->Void){
-        var states = [String]()
-        REF_STATES.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
-            for value in snapshot.children{
-                let state = value as! FIRDataSnapshot
-                print(state.key)
-                states.append(state.key)
-            }
-            completionHandlerForGetStates(fetchedStates: states)
-        })
-//        print(REF_GEOFIRE)
-    }
-    
-    func getRestaurants(completionHandlerForRestaurants:(fetchedRestaurants:[Info])->Void){
+    func getRestaurantsByRegion(state:String, region:String, completionHandlerForRestaurants:(fetchedRestaurants:[Info], reference:FIRDatabaseReference)->Void){
         var restaurants = [Info]()
-        REF_RESTAURANTS.child("New York").queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
+        let REF = REF_RESTAURANTS.child(state).child(region)
+        REF.queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
             let restaurant = Info(snapshot: snapshot)
             restaurants.append(restaurant)
-            completionHandlerForRestaurants(fetchedRestaurants: restaurants)
+            completionHandlerForRestaurants(fetchedRestaurants: restaurants, reference: REF)
         })
     }
     
-    func getRestaurantsByRegion(state:String, region:String, completionHandlerForRestaurants:(fetchedRestaurants:[Info])->Void){
-        var restaurants = [Info]()
-        REF_RESTAURANTS.child(state).child(region).queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
-            let restaurant = Info(snapshot: snapshot)
-            restaurants.append(restaurant)
-            completionHandlerForRestaurants(fetchedRestaurants: restaurants)
-        })
-    }
-    
-    func getEveryThing(state:String,completionHandlerForRestaurants:(fetchedRestaurants:[Info])->Void){
-        REF_RESTAURANTS.child(state).observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
+    func getEveryThing(state:String,completionHandlerForRestaurants:(fetchedRestaurants:[Info], reference:FIRDatabaseReference)->Void){
+        let REF = REF_RESTAURANTS.child(state)
+        REF.observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
             var restaurants = [Info]()
             for value in snapshot.children{
                 let region = value as! FIRDataSnapshot
-                self.REF_RESTAURANTS.child(state).child(region.key).queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
+                print("region one two")
+                let REFRES = self.REF_RESTAURANTS.child(state).child(region.key)
+                REFRES.queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
                     let restaurant = Info(snapshot: snapshot)
                     restaurants.append(restaurant)
-                    completionHandlerForRestaurants(fetchedRestaurants: restaurants)
+                    
+                    REFRES.removeAllObservers()
+                    completionHandlerForRestaurants(fetchedRestaurants: restaurants, reference: REF)
                 })
             }
         })
     }
-    func getRegion(state:String,completionHandlerForGetRegion:(fetchedRegion:[String])->Void){
-        var regions = [String]()
-        REF_STATES.child(state).observeSingleEventOfType(FIRDataEventType.Value, withBlock: {snapshot in
-            for value in snapshot.children{
-                let region = value as! FIRDataSnapshot
-//                print(region.key)
-                regions.append(region.key)
-            }
-            completionHandlerForGetRegion(fetchedRegion: regions)
-        })
-    }
     
-    func getEventsByState(state:String, completionHandlerForEvents:(fetchedEvents:[Event])->Void){
+    func getEventsByState(state:String, completionHandlerForEvents:(fetchedEvents:[Event], referece:FIRDatabaseReference)->Void){
         var events = [Event]()
-        REF_EVENTS.child(state).child("All").queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
+        let REF = REF_EVENTS.child(state).child("All")
+        REF.queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
             let event = Event(snapshot: snapshot)
             events.append(event)
-            completionHandlerForEvents(fetchedEvents: events)
+            REF.removeAllObservers()
+            completionHandlerForEvents(fetchedEvents: events, referece: REF)
         })
     }
     
     func getVideosByCategory(category:String, type:String, completionHandlerForVideos:(fetchedVideos:[Video])->Void){
         var videos = [Video]()
-        REF_VIDEOS.child(category).child(type).queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
+        let REF = REF_VIDEOS.child(category).child(type)
+        REF.queryOrderedByChild("name").observeEventType(FIRDataEventType.ChildAdded, withBlock: {snapshot in
             let video = Video(snapshot: snapshot)
             videos.append(video)
+            REF.removeAllObservers()
             completionHandlerForVideos(fetchedVideos: videos)
         })
     }

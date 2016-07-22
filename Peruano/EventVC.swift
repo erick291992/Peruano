@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EventVC: UIViewController, CategoryViewControllerDelegate {
 
@@ -14,6 +15,8 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stateButton: CustomButton!
+    
+    var REF:FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,11 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadEvents()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        REF.removeAllObservers()
     }
     
     @IBAction func statePressed(sender: AnyObject) {
@@ -49,9 +57,10 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     }
     
     func loadEvents(){
-        DataService.sharedInstance().getEventsByState(stateButton.currentTitle!) { (fetchedEvents) in
+        DataService.sharedInstance().getEventsByState(stateButton.currentTitle!) { (fetchedEvents, reference) in
             self.events = fetchedEvents
             self.tableView.reloadData()
+            self.REF = reference
         }
     }
     

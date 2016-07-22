@@ -8,14 +8,6 @@
 
 import UIKit
 
-extension String{
-    //IOS 9 ONLY
-//    func removeAll(characters: [Character]) -> String {
-//        return String(self.characters.filter({ !characters.contains($0)}))
-//    }
-    
-}
-
 let imageCache = NSCache()
 
 class CustomImageView: UIImageView {

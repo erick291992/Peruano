@@ -35,6 +35,8 @@ class FeedbackVC: UIViewController {
     
     @IBAction func sendPressed(sender: AnyObject) {
         DataService.sharedInstance().postFeedBack(websiteTextField.text!, comment: commentTextView.text!)
+        let alert = basicAlert("Message Sent", message: "Thank You For Your Feedback", action: "OK")
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     
@@ -93,7 +95,12 @@ extension FeedbackVC: UITextViewDelegate {
     
     private func basicAlert(tittle:String, message:String, action: String)-> UIAlertController{
         let alert = UIAlertController(title: tittle, message: message, preferredStyle: .Alert)
-        let action = UIAlertAction(title: action, style: .Default, handler: nil)
+//        let action = UIAlertAction(title: action, style: .Default, handler: nil)
+        let action = UIAlertAction(title: action, style: .Default) { (alertAction) in
+            print(alertAction)
+//            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
         alert.addAction(action)
         return alert
     }

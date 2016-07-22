@@ -22,7 +22,7 @@ class IntroVC: UIViewController, UIScrollViewDelegate {
             print("this is a isAnonymous \(isAnonymous)")
             let uid = user!.uid
             print(uid)
-            self.nextViewController()
+            //self.nextViewController()
         }
         
         //1
@@ -49,9 +49,38 @@ class IntroVC: UIViewController, UIScrollViewDelegate {
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.width * 4, self.scrollView.frame.height)
         self.scrollView.delegate = self
         self.pageControl.currentPage = 0
+        //this sets a time to call scroll
+        NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "moveToNextPage", userInfo: nil, repeats: true)
+    }
+    func moveToNextPage (){
+        
+        // Move to next page
+        let pageWidth:CGFloat = CGRectGetWidth(self.scrollView.frame)
+        let maxWidth:CGFloat = pageWidth * 4
+        let contentOffset:CGFloat = self.scrollView.contentOffset.x
+        
+        var slideToX = contentOffset + pageWidth
+        
+        if  contentOffset + pageWidth == maxWidth{
+            slideToX = 0
+            // Each time you move back to the first slide, you may want to hide the button, uncomment the animation below to do so
+            //            UIView.animateWithDuration(0.5, animations: { () -> Void in
+            //                self.startButton.alpha = 0.0
+            //            })
+        }
+        self.scrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, CGRectGetHeight(self.scrollView.frame)), animated: true)
     }
     
+    //automatic scroll
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        setupScrollForPage()
+    }
+    //manual scroll
     func scrollViewDidEndDecelerating(scrollView: UIScrollView){
+        setupScrollForPage()
+    }
+    
+    func setupScrollForPage(){
         // Test the offset and calculate the current page after scrolling ends
         let pageWidth:CGFloat = CGRectGetWidth(scrollView.frame)
         let currentPage:CGFloat = floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1

@@ -20,6 +20,7 @@ class CategoryVC: UIViewController {
     var category:Int!
     var searchInDatabase:String!
     var categoryTitle:String?
+    var REF:FIRDatabaseReference!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,10 +29,16 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = categoryTitle
-        DataService.sharedInstance().getCategoryOne(searchInDatabase, completionHandlerForCategory: { (fetchedArray) in
+        DataService.sharedInstance().getCategory(searchInDatabase, completionHandlerForCategory: { (fetchedArray, reference) in
             self.choices = fetchedArray
             self.tableView.reloadData()
+            self.REF = reference
         })
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        REF.removeAllObservers()
     }
     
     @IBAction func DonePressed(sender: AnyObject) {

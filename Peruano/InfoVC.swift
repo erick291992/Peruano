@@ -20,6 +20,9 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     
 //    var infoToDisplay = [String]()
     var infos = [Info]()
+    var REF_RESTAURANT:FIRDatabaseReference?
+    var REF_EVERYTHING:FIRDatabaseReference?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,17 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadRestaurants()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("removing")
+        if let refRestaurant = REF_RESTAURANT{
+            refRestaurant.removeAllObservers()
+        }
+        if let refEverything = REF_EVERYTHING{
+            refEverything.removeAllObservers()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,15 +71,17 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     
     func loadRestaurants(){
         if regionButton.currentTitle! == "All"{
-            DataService.sharedInstance().getEveryThing(stateButton.currentTitle!) { (fetchedRestaurants) in
+            DataService.sharedInstance().getEveryThing(stateButton.currentTitle!) { (fetchedRestaurants, reference) in
                 self.infos = fetchedRestaurants
                 self.tableView.reloadData()
+                self.REF_EVERYTHING = reference
             }
         }
         else{
-            DataService.sharedInstance().getRestaurantsByRegion(stateButton.currentTitle!, region: regionButton.currentTitle!) { (fetchedRestaurants) in
+            DataService.sharedInstance().getRestaurantsByRegion(stateButton.currentTitle!, region: regionButton.currentTitle!) { (fetchedRestaurants, reference) in
                 self.infos = fetchedRestaurants
                 self.tableView.reloadData()
+                self.REF_RESTAURANT = reference
             }
         }
     }
