@@ -16,7 +16,7 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stateButton: CustomButton!
     
-    var REF:FIRDatabaseReference!
+    var REF:FIRDatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,9 @@ class EventVC: UIViewController, CategoryViewControllerDelegate {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        REF.removeAllObservers()
+        if let refEvent = REF{
+            refEvent.removeAllObservers()
+        }
     }
     
     @IBAction func statePressed(sender: AnyObject) {

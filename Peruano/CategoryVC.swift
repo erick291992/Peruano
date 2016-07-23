@@ -20,7 +20,7 @@ class CategoryVC: UIViewController {
     var category:Int!
     var searchInDatabase:String!
     var categoryTitle:String?
-    var REF:FIRDatabaseReference!
+    var REF:FIRDatabaseReference?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,7 +38,9 @@ class CategoryVC: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        REF.removeAllObservers()
+        if let refCategory = REF{
+            refCategory.removeAllObservers()
+        }
     }
     
     @IBAction func DonePressed(sender: AnyObject) {
