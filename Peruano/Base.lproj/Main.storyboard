@@ -985,11 +985,11 @@
             </objects>
             <point key="canvasLocation" x="1620" y="2323"/>
         </scene>
-        <!--Item-->
+        <!--About Us-->
         <scene sceneID="Nae-I5-cvr">
             <objects>
                 <navigationController id="1SZ-CH-SGB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="home" id="vV1-gw-lct"/>
+                    <tabBarItem key="tabBarItem" title="About Us" image="home" id="vV1-gw-lct"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tC8-Vx-tUz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
