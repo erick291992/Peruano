@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>765359801718-njadgh1mjhnob3ipsg2rdmfkp6v1uj6f.apps.googleusercontent.com</string>
+	<string>123379277758-bmefvppdho62b3gkqrfjuikrnfa2t6m5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.765359801718-njadgh1mjhnob3ipsg2rdmfkp6v1uj6f</string>
+	<string>com.googleusercontent.apps.123379277758-bmefvppdho62b3gkqrfjuikrnfa2t6m5</string>
 	<key>API_KEY</key>
-	<string>AIzaSyByz6pwv_waKh6gmz91VxqfU9RZ-ckaEPI</string>
+	<string>AIzaSyAuPAHzNzkdRck8uc1nlNXM3HO7rtlkTRk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>765359801718</string>
+	<string>123379277758</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.SolorApps.Peruano</string>
+	<string>com.intiTechnology.PeruApp</string>
 	<key>PROJECT_ID</key>
-	<string>peruano-12163</string>
+	<string>peruapp-21034</string>
 	<key>STORAGE_BUCKET</key>
-	<string>peruano-12163.appspot.com</string>
+	<string>peruapp-21034.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:765359801718:ios:233eafc86a9bf03a</string>
+	<string>1:123379277758:ios:95e230158a04fff8</string>
 	<key>DATABASE_URL</key>
-	<string>https://peruano-12163.firebaseio.com</string>
+	<string>https://peruapp-21034.firebaseio.com</string>
 </dict>
 </plist>

@@ -38,7 +38,6 @@ class InfoVC: UIViewController,CategoryViewControllerDelegate {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        print("removing")
         if let refRestaurant = REF_RESTAURANT{
             refRestaurant.removeAllObservers()
         }

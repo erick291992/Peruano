@@ -19,8 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4f-Sl-pXU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4f-Sl-pXU">
+                                <rect key="frame" x="0.0" y="40" width="600" height="520"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="intro page" translatesAutoresizingMaskIntoConstraints="NO" id="FHZ-xY-hBy">
+                                        <rect key="frame" x="87" y="8" width="426" height="504"/>
+                                    </imageView>
+                                </subviews>
                             </scrollView>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdv-tl-mkY">
                                 <rect key="frame" x="250" y="550" width="100" height="30"/>
@@ -46,14 +51,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xdv-tl-mkY" firstAttribute="centerX" secondItem="yyD-Wl-VnF" secondAttribute="centerX" id="02C-mY-9s7"/>
-                            <constraint firstItem="Uip-0i-6sL" firstAttribute="top" secondItem="t4f-Sl-pXU" secondAttribute="bottom" id="5a5-7J-X73"/>
+                            <constraint firstItem="Uip-0i-6sL" firstAttribute="top" secondItem="t4f-Sl-pXU" secondAttribute="bottom" constant="40" id="5a5-7J-X73"/>
                             <constraint firstItem="Uip-0i-6sL" firstAttribute="top" secondItem="Xdv-tl-mkY" secondAttribute="bottom" constant="20" id="Pm1-lN-pkZ"/>
                             <constraint firstAttribute="trailing" secondItem="t4f-Sl-pXU" secondAttribute="trailing" id="QqA-SW-g17"/>
                             <constraint firstItem="Xdv-tl-mkY" firstAttribute="top" secondItem="l9D-RR-E5s" secondAttribute="bottom" constant="50" id="RGH-RW-zTk"/>
                             <constraint firstItem="l9D-RR-E5s" firstAttribute="centerX" secondItem="yyD-Wl-VnF" secondAttribute="centerX" id="Sks-kD-Fjy"/>
                             <constraint firstItem="t4f-Sl-pXU" firstAttribute="leading" secondItem="yyD-Wl-VnF" secondAttribute="leading" id="spU-Za-xG8"/>
                             <constraint firstItem="Xdv-tl-mkY" firstAttribute="leading" secondItem="l9D-RR-E5s" secondAttribute="trailing" constant="-69" id="tAu-ys-PGT"/>
-                            <constraint firstItem="t4f-Sl-pXU" firstAttribute="top" secondItem="yyD-Wl-VnF" secondAttribute="top" id="xYJ-aX-ke7"/>
+                            <constraint firstItem="t4f-Sl-pXU" firstAttribute="top" secondItem="yyD-Wl-VnF" secondAttribute="top" constant="40" id="xYJ-aX-ke7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1038,11 +1043,11 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="chy-3k-nDS">
                                         <rect key="frame" x="40" y="40" width="480" height="317"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <mutableString key="text">PeruApp was developed by Inti Technology Inc. It was created to help you locate (within the United States) Peruvian restaurants and events. Additionally, you can watch music videos and movies all in your cell phone. Before PeruApp this information was not located in one easy to find location. We have compiled this information and organized it in a user friendly application. remember, this is only the beginning; there is more to come from PeruApp.
+                                        <string key="text">PeruApp was developed by Inti Technology Inc. It was created to help you locate (within the United States) Peruvian restaurants and events. Additionally, you can watch music videos and movies all in your cell phone. Before PeruApp this information was not located in one easy to find location. We have compiled this information and organized it in a user friendly application. remember, this is only the beginning; there is more to come from PeruApp.
 
 Icons provided by: https://icons8.com/
 
-We welcome your feedback and suggestions. Click below to begin</mutableString>
+We welcome your feedback and suggestions. Click below to begin</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1282,6 +1287,7 @@ We welcome your feedback and suggestions. Click below to begin</mutableString>
     <resources>
         <image name="events" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
+        <image name="intro page" width="465" height="573"/>
         <image name="music_video" width="25" height="25"/>
         <image name="peru_flag" width="800" height="533"/>
         <image name="restaurant" width="25" height="25"/>
